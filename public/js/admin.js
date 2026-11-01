@@ -137,12 +137,12 @@ function renderAdminState(state) {
   if (state.secretCard && state.phase !== 'LOBBY') {
     if (prevImg) prevImg.src = state.secretCard.image || 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&q=80';
     if (prevName) prevName.textContent = state.secretCard.name;
-    if (prevAnime) prevAnime.textContent = `${state.secretCard.anime} (${state.secretCard.category})`;
-    if (prevHint) prevHint.textContent = state.secretCard.hint;
+    if (prevAnime) prevAnime.textContent = state.secretCard.anime;
+    if (prevHint) prevHint.textContent = `Categoría temática: ${state.secretCard.category}`;
   } else {
     if (prevName) prevName.textContent = 'Ninguna ronda activa';
     if (prevAnime) prevAnime.textContent = 'Presiona "Iniciar Partida" para sortear un personaje';
-    if (prevHint) prevHint.textContent = 'Pista del impostor: -';
+    if (prevHint) prevHint.textContent = 'Categoría: -';
   }
 
   // Overlay checkbox sync

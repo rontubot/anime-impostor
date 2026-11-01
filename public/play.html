@@ -147,18 +147,17 @@
           No conoces el personaje exacto que tienen los demás.
         </p>
 
-        <!-- Impostor Hint Box -->
-        <div class="bg-pink-950/40 rounded-xl p-4 border border-pink-500/50 text-left w-full mb-6">
-          <div class="font-bold text-pink-300 text-xs mb-1 flex items-center gap-1.5 uppercase tracking-wider">
-            <i data-lucide="sparkles" class="w-4 h-4 text-pink-400"></i> Pista Secreta para ti:
+        <!-- Impostor Category Box -->
+        <div class="bg-pink-950/40 rounded-xl p-4 border border-pink-500/50 text-center w-full mb-6">
+          <span class="text-[11px] text-pink-300 font-bold uppercase tracking-wider block mb-1">
+            <i data-lucide="tag" class="w-3.5 h-3.5 inline mr-1"></i> CATEGORÍA TEMÁTICA
+          </span>
+          <div id="impostor-category-tag" class="font-cyber font-black text-xl text-yellow-300 mt-1 tracking-wide">
+            Categoría
           </div>
-          <p id="impostor-hint-text" class="text-sm font-semibold text-white leading-relaxed">
-            Pista confidencial para ayudarte a fingir...
+          <p class="text-[11px] text-slate-400 mt-2">
+            Solo conoces esta categoría. ¡Finge que sabes el personaje exacto!
           </p>
-          <div class="mt-2 pt-2 border-t border-pink-500/30 flex items-center justify-between text-[11px] text-pink-200">
-            <span>Categoría general:</span>
-            <span id="impostor-category-tag" class="font-bold font-cyber text-yellow-300">Shonen</span>
-          </div>
         </div>
 
         <button id="btn-hide-impostor" class="btn-cyber btn-primary w-full py-3.5 text-sm">
@@ -312,7 +311,7 @@
   </footer>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/play.js?v=3.0"></script>
+  <script src="/js/play.js?v=3.2"></script>
   <script>
     lucide.createIcons();
   </script>

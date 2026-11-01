@@ -161,8 +161,8 @@ if (btnReveal) {
         cardImpostor.classList.remove('hidden');
         cardImpostor.classList.add('flex');
 
-        document.getElementById('impostor-hint-text').textContent = response.hint || 'Sin pista adicional.';
-        document.getElementById('impostor-category-tag').textContent = response.category || 'Anime General';
+        const catTag = document.getElementById('impostor-category-tag');
+        if (catTag) catTag.textContent = response.category || 'Anime';
       } else {
         cardImpostor.classList.add('hidden');
         cardImpostor.classList.remove('flex');
