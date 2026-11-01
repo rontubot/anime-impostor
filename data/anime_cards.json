@@ -222,5 +222,341 @@
     "anime": "Code Geass",
     "category": "Mechas y Rebelión",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b417-gVLmIJu9phcK.png"
+  },
+  {
+    "id": "rintaro_okabe",
+    "name": "Rintaro Okabe",
+    "anime": "Steins;Gate",
+    "category": "Viajes en Tiempo",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b35252-DY9TW6pusqeh.png"
+  },
+  {
+    "id": "kurisu_makise",
+    "name": "Kurisu Makise",
+    "anime": "Steins;Gate",
+    "category": "Viajes en Tiempo",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b34470-Jw2LXZBL5R8i.png"
+  },
+  {
+    "id": "johan_liebert",
+    "name": "Johan Liebert",
+    "anime": "Monster",
+    "category": "Misterio Psicológico",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b719-y984mDWyGf5n.jpg"
+  },
+  {
+    "id": "kenzo_tenma",
+    "name": "Kenzo Tenma",
+    "anime": "Monster",
+    "category": "Misterio Psicológico",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b718-b6ZZVp822lw0.png"
+  },
+  {
+    "id": "thorfinn",
+    "name": "Thorfinn",
+    "anime": "Vinland Saga",
+    "category": "Vikingos e Historia",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b10138-zOPrka0ddZOR.png"
+  },
+  {
+    "id": "askeladd",
+    "name": "Askeladd",
+    "anime": "Vinland Saga",
+    "category": "Vikingos e Historia",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b13020-ZdiYlNmpRUNS.png"
+  },
+  {
+    "id": "guts",
+    "name": "Guts",
+    "anime": "Berserk",
+    "category": "Fantasía Oscura",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b422-XTaiTuvRohsV.png"
+  },
+  {
+    "id": "griffith",
+    "name": "Griffith",
+    "anime": "Berserk",
+    "category": "Fantasía Oscura",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b424-Jfrsf8I7zBps.png"
+  },
+  {
+    "id": "spike_spiegel",
+    "name": "Spike Spiegel",
+    "anime": "Cowboy Bebop",
+    "category": "Cazarrecompensas Espaciales",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1-ChxaldmieFlQ.png"
+  },
+  {
+    "id": "shinji_ikari",
+    "name": "Shinji Ikari",
+    "anime": "Neon Genesis Evangelion",
+    "category": "Mechas Psicológicos",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89-ZtZhXkh1rITn.png"
+  },
+  {
+    "id": "asuka_langley",
+    "name": "Asuka Langley",
+    "anime": "Neon Genesis Evangelion",
+    "category": "Mechas Psicológicos",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b94-d631a3Z2KPvd.png"
+  },
+  {
+    "id": "david_martinez",
+    "name": "David Martinez",
+    "anime": "Cyberpunk: Edgerunners",
+    "category": "Distopía Cyberpunk",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b284158-z1uGKC3IYVa1.png"
+  },
+  {
+    "id": "lucy",
+    "name": "Lucy",
+    "anime": "Cyberpunk: Edgerunners",
+    "category": "Distopía Cyberpunk",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b284157-cqYawN7XCNJx.jpg"
+  },
+  {
+    "id": "shigeo_kageyama__mob_",
+    "name": "Shigeo Kageyama (Mob)",
+    "anime": "Mob Psycho 100",
+    "category": "Poderes Psíquicos",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89616-dXmdOc7L6SDi.png"
+  },
+  {
+    "id": "arataka_reigen",
+    "name": "Arataka Reigen",
+    "anime": "Mob Psycho 100",
+    "category": "Poderes Psíquicos",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89334-OPj1hCzvrt7X.png"
+  },
+  {
+    "id": "kamina",
+    "name": "Kamina",
+    "anime": "Gurren Lagann",
+    "category": "Mechas y Voluntad",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2075-sWb5Xz76JWdX.png"
+  },
+  {
+    "id": "simon",
+    "name": "Simon",
+    "anime": "Gurren Lagann",
+    "category": "Mechas y Voluntad",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2257-jnalsdnIX1vN.jpg"
+  },
+  {
+    "id": "hitori_gotou__bocchi_",
+    "name": "Hitori Gotou (Bocchi)",
+    "anime": "Bocchi the Rock!",
+    "category": "Música y Ansiedad",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b257562-Ru35NYPfsqhY.png"
+  },
+  {
+    "id": "kaguya_shinomiya",
+    "name": "Kaguya Shinomiya",
+    "anime": "Kaguya-sama: Love is War",
+    "category": "Guerra Romántica",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b120649-NPaWaIpWy60E.png"
+  },
+  {
+    "id": "miyuki_shirogane",
+    "name": "Miyuki Shirogane",
+    "anime": "Kaguya-sama: Love is War",
+    "category": "Guerra Romántica",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b121101-Q8HzKP15At2d.png"
+  },
+  {
+    "id": "ai_hoshino",
+    "name": "Ai Hoshino",
+    "anime": "Oshi no Ko",
+    "category": "Idols y Venganza",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b172759-cccVhJ2fQA92.png"
+  },
+  {
+    "id": "aqua_hoshino",
+    "name": "Aqua Hoshino",
+    "anime": "Oshi no Ko",
+    "category": "Idols y Venganza",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b183885-HOmw8CqcJdv3.jpg"
+  },
+  {
+    "id": "reg",
+    "name": "Reg",
+    "anime": "Made in Abyss",
+    "category": "Exploración del Abismo",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b122444-9rGUpcjwygHD.png"
+  },
+  {
+    "id": "saber__artoria_",
+    "name": "Saber (Artoria)",
+    "anime": "Fate/Zero",
+    "category": "Guerra del Grial",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b497-Yg5pNmC8kxzs.png"
+  },
+  {
+    "id": "gilgamesh",
+    "name": "Gilgamesh",
+    "anime": "Fate/Zero",
+    "category": "Guerra del Grial",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2514-hnE6LEdqm7Su.png"
+  },
+  {
+    "id": "laios_touden",
+    "name": "Laios Touden",
+    "anime": "Dungeon Meshi",
+    "category": "Cocina de Mazmorras",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126818-vWeIwxSERSHd.png"
+  },
+  {
+    "id": "mugen",
+    "name": "Mugen",
+    "anime": "Samurai Champloo",
+    "category": "Samuráis y Hip-Hop",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b390-30DZg8NvIrVk.png"
+  },
+  {
+    "id": "shinya_kogami",
+    "name": "Shinya Kogami",
+    "anime": "Psycho-Pass",
+    "category": "Distopía Policial",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b68315-f9RBjyJCoj95.jpg"
+  },
+  {
+    "id": "ken_kaneki",
+    "name": "Ken Kaneki",
+    "anime": "Tokyo Ghoul",
+    "category": "Ghouls y Canibalismo",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b87275-mb13EWZBdbh3.png"
+  },
+  {
+    "id": "violet_evergarden",
+    "name": "Violet Evergarden",
+    "anime": "Violet Evergarden",
+    "category": "Cartas y Posguerra",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b90169-4wr1Zehnsac8.png"
+  },
+  {
+    "id": "gintoki_sakata",
+    "name": "Gintoki Sakata",
+    "anime": "Gintama",
+    "category": "Comedia Samurai",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b672-cP5VPriN67xJ.png"
+  },
+  {
+    "id": "osamu_dazai",
+    "name": "Osamu Dazai",
+    "anime": "Bungou Stray Dogs",
+    "category": "Detectives Sobrenaturales",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89198-qKmRTw4Y3PRC.png"
+  },
+  {
+    "id": "senku_ishigami",
+    "name": "Senku Ishigami",
+    "anime": "Dr. Stone",
+    "category": "Ciencia y Supervivencia",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b124142-XUO1g7wRqkaT.png"
+  },
+  {
+    "id": "shoyo_hinata",
+    "name": "Shoyo Hinata",
+    "anime": "Haikyuu!!",
+    "category": "Voleibol de Preparatoria",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b64769-WoWlCMLLgJ14.png"
+  },
+  {
+    "id": "tobio_kageyama",
+    "name": "Tobio Kageyama",
+    "anime": "Haikyuu!!",
+    "category": "Voleibol de Preparatoria",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b64771-BuCVs7B8bBdh.png"
+  },
+  {
+    "id": "yoichi_isagi",
+    "name": "Yoichi Isagi",
+    "anime": "Blue Lock",
+    "category": "Fútbol y Egoísmo",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b140856-wVzKSyvU7R5B.png"
+  },
+  {
+    "id": "shinichi_izumi",
+    "name": "Shinichi Izumi",
+    "anime": "Parasyte",
+    "category": "Parásitos Alienígenas",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b12323-NAoqDYOn2RSo.png"
+  },
+  {
+    "id": "alucard",
+    "name": "Alucard",
+    "anime": "Hellsing Ultimate",
+    "category": "Vampiros y Sangre",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/n601-CVySkaFQgsPW.jpg"
+  },
+  {
+    "id": "vash_the_stampede",
+    "name": "Vash the Stampede",
+    "anime": "Trigun",
+    "category": "Western Espacial",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b162-kfdfqsX7Xjf0.png"
+  },
+  {
+    "id": "ryuko_matoi",
+    "name": "Ryuko Matoi",
+    "anime": "Kill la Kill",
+    "category": "Acción y Uniformes",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b83797-ix0Cl5OMfV22.png"
+  },
+  {
+    "id": "shotaro_kaneda",
+    "name": "Shotaro Kaneda",
+    "anime": "Akira",
+    "category": "Cyberpunk Clásico",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2588-OfACKXYm2lkV.png"
+  },
+  {
+    "id": "nana_osaki",
+    "name": "Nana Osaki",
+    "anime": "Nana",
+    "category": "Música Punk",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b702-qqO3zbj5hp1l.png"
+  },
+  {
+    "id": "inuyasha",
+    "name": "InuYasha",
+    "anime": "InuYasha",
+    "category": "Fantasía Feudal",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1353-xsZhvfi7IFzT.png"
+  },
+  {
+    "id": "usagi_tsukino__sailor_moon_",
+    "name": "Usagi Tsukino (Sailor Moon)",
+    "anime": "Sailor Moon",
+    "category": "Magical Girls",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b2030-GQvVYPEYkXCy.jpg"
+  },
+  {
+    "id": "rudeus_greyrat",
+    "name": "Rudeus Greyrat",
+    "anime": "Mushoku Tensei",
+    "category": "Reencarnación Fantástica",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88348-bIe5XnXdRpmX.png"
+  },
+  {
+    "id": "satoru_fujinuma",
+    "name": "Satoru Fujinuma",
+    "anime": "Erased",
+    "category": "Misterio Temporal",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89275-xCGzh6jAGe2v.png"
+  },
+  {
+    "id": "maka_albarn",
+    "name": "Maka Albarn",
+    "anime": "Soul Eater",
+    "category": "Armas y Almas",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b8439-5TIyWlfClnMs.png"
+  },
+  {
+    "id": "yusuke_urameshi",
+    "name": "Yusuke Urameshi",
+    "anime": "Yu Yu Hakusho",
+    "category": "Detectives Espirituales",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b729-V6GlADOEZv3x.png"
   }
 ]
