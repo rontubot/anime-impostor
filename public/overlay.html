@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Impostor - Overlay OBS</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti for celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body class="overlay-mode select-none font-sans">
+  <div id="overlay-container" class="relative w-screen h-screen p-6 flex flex-col justify-between pointer-events-none">
+
+    <!-- TOP BAR HUD -->
+    <header class="flex items-center justify-between pointer-events-auto">
+      <!-- Top Left: Game Info & Status -->
+      <div class="flex items-center gap-3">
+        <div class="glass-panel px-4 py-2 flex items-center gap-3 border-l-4 border-l-[#ff2a5f]">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#ff2a5f] to-[#9d4edd] flex items-center justify-center shadow-lg shadow-pink-500/20">
+            <i data-lucide="ghost" class="w-5 h-5 text-white"></i>
+          </div>
+          <div>
+            <h1 class="font-cyber text-sm font-bold text-white tracking-wider flex items-center gap-2">
+              ANIME IMPOSTOR
+              <span id="impostor-badge" class="badge-cyber badge-red text-[10px]">1 IMPOSTOR</span>
+            </h1>
+            <div class="flex items-center gap-2 mt-0.5">
+              <span id="phase-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span id="phase-text" class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Esperando inicio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Current Active Action pill (e.g. "Turno de Pedro") -->
+        <div id="current-action-pill" class="glass-panel px-4 py-2 hidden items-center gap-2 border border-cyan-500/30">
+          <i data-lucide="smartphone" class="w-4 h-4 text-[#00f0ff] animate-bounce"></i>
+          <span class="text-xs text-slate-300">Viendo carta:</span>
+          <span id="current-active-player" class="text-xs font-bold text-[#00f0ff] font-cyber">Jugador</span>
+        </div>
+      </div>
+
+      <!-- Top Right: Cyber Timer -->
+      <div id="timer-box" class="glass-panel px-5 py-2 flex items-center gap-3 border border-slate-700/50">
+        <i data-lucide="timer" class="w-5 h-5 text-[#00f0ff]"></i>
+        <div class="flex flex-col items-end">
+          <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Tiempo</span>
+          <span id="timer-display" class="font-cyber text-2xl font-bold text-white tracking-wider">03:00</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- LEFT HUD: PLAYERS STATUS (COMPACT VERTICAL BAR) -->
+    <aside class="absolute left-6 top-24 bottom-28 flex flex-col justify-center gap-2 pointer-events-auto max-w-[240px]">
+      <div id="players-list" class="flex flex-col gap-2">
+        <!-- Rendered dynamically (up to 8 players) -->
+      </div>
+    </aside>
+
+    <!-- CENTER-BOTTOM WIDGET: SECRET ANIME / CHARACTER (STREAM VIEWERS EXCLUSIVE) -->
+    <!-- User requirement: chico en el centro abajo, personaje e imagen si aplica -->
+    <div class="w-full flex justify-center pb-2 pointer-events-auto">
+      <div id="secret-card-container" class="hidden transition-all duration-500 transform translate-y-0">
+        <div class="glass-panel px-4 py-3 flex items-center gap-4 border border-[#ff2a5f]/40 shadow-2xl shadow-pink-900/30 max-w-lg rounded-2xl relative overflow-hidden backdrop-blur-xl">
+          <!-- Cyber ambient lighting stripe -->
+          <div class="absolute -top-10 -left-10 w-24 h-24 bg-[#ff2a5f]/30 rounded-full blur-2xl"></div>
+          <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-[#00f0ff]/20 rounded-full blur-2xl"></div>
+
+          <!-- Character Image -->
+          <div class="relative w-16 h-16 rounded-xl overflow-hidden border-2 border-[#00f0ff] flex-shrink-0 shadow-md shadow-cyan-500/30 bg-slate-900">
+            <img id="secret-char-img" src="" alt="Anime Character" class="w-full h-full object-cover object-top transition-transform hover:scale-110">
+          </div>
+
+          <!-- Info -->
+          <div class="flex flex-col min-w-0 pr-2">
+            <div class="flex items-center gap-2 mb-0.5">
+              <span class="badge-cyber badge-cyan text-[9px] px-2 py-0.5">
+                <i data-lucide="tv" class="w-2.5 h-2.5"></i> VISTA STREAM
+              </span>
+              <span id="secret-category-badge" class="badge-cyber badge-purple text-[9px] px-2 py-0.5 truncate max-w-[130px]">
+                Shonen
+              </span>
+            </div>
+            
+            <h2 id="secret-char-name" class="font-cyber font-extrabold text-white text-base tracking-wide truncate drop-shadow">
+              Personaje Secreto
+            </h2>
+            <p id="secret-anime-name" class="text-xs font-semibold text-slate-300 truncate">
+              Anime Serie
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FULL SCREEN MODAL: DRAMATIC RESULTS & REVEAL -->
+    <div id="results-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center z-50 pointer-events-auto">
+      <div class="glass-panel p-8 max-w-xl w-full mx-4 border-2 border-[#ff2a5f] text-center relative overflow-hidden slide-up-center">
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#ff2a5f]/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div id="result-status-badge" class="badge-cyber badge-red text-xs px-4 py-1 mb-4 inline-flex">
+          ¡REVELACIÓN FINAL!
+        </div>
+
+        <h2 id="result-title" class="font-cyber text-3xl md:text-4xl font-black text-white mb-2 tracking-wide">
+          ¿QUIÉN ERA EL IMPOSTOR?
+        </h2>
+
+        <p id="result-subtitle" class="text-slate-300 text-sm mb-6">
+          La votación ha terminado. Conozcan al culpable:
+        </p>
+
+        <!-- Impostor Cards Container -->
+        <div id="impostors-reveal-grid" class="flex flex-wrap justify-center gap-4 mb-6">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Secret Card Reference in Results -->
+        <div class="bg-slate-900/80 border border-slate-700/60 rounded-xl p-3 flex items-center justify-center gap-3 max-w-sm mx-auto">
+          <img id="result-secret-img" src="" class="w-10 h-10 rounded-lg object-cover border border-cyan-400">
+          <div class="text-left">
+            <span class="text-[10px] text-slate-400 uppercase font-bold">El anime secreto era</span>
+            <div id="result-secret-title" class="text-sm font-bold text-[#00f0ff]">Nombre - Anime</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/audio.js"></script>
+  <script src="/js/overlay.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
