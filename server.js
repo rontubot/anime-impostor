@@ -99,8 +99,18 @@ function pickRandomAlivePlayer(excludeId) {
   return { id: candidates[idx].id, name: candidates[idx].name };
 }
 
-// Serve static assets
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static assets with no-cache headers to prevent browser caching old stylesheets/animations
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  next();
+});
+
+app.use(express.static(path.join(__dirname, 'public'), {
+  etag: false,
+  maxAge: 0
+}));
 app.use(express.json());
 
 // Routes

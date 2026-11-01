@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Anime Impostor - Pasa el Teléfono</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/style.css?v=3.0">
   <style>
     html, body {
       touch-action: manipulation;
@@ -128,7 +131,7 @@
       </div>
 
       <!-- IMPOSTOR CARD (STATIC, NO SHAKE, NO SOUND) -->
-      <div id="card-impostor" class="hidden w-full glass-panel-neon p-5 border-2 border-[#ff2a5f] shadow-2xl shadow-pink-950/60 flex-col items-center">
+      <div id="card-impostor" style="animation: none !important; transform: none !important;" class="hidden w-full glass-panel-neon p-5 border-2 border-[#ff2a5f] shadow-2xl shadow-pink-950/60 flex-col items-center">
         <div class="badge-cyber badge-red text-xs px-3 py-1 mb-3">
           <i data-lucide="skull" class="w-4 h-4"></i> ¡ERES EL IMPOSTOR!
         </div>
@@ -281,7 +284,7 @@
   </footer>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/play.js"></script>
+  <script src="/js/play.js?v=3.0"></script>
   <script>
     lucide.createIcons();
   </script>

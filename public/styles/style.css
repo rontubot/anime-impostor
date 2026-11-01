@@ -171,6 +171,15 @@ body.overlay-mode {
   animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Explicitly disable all vibrations, shakes and jitter on cards */
+#card-impostor,
+#card-innocent,
+.shake-impostor,
+.glass-panel-neon {
+  animation: none !important;
+  transform: none !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
