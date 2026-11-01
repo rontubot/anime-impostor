@@ -117,6 +117,12 @@
     Anime Impostor • Diseñado para Streamers & Railway
   </footer>
 
+  <!-- FLOATING IN-APP TOAST -->
+  <div id="index-toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/95 border border-cyan-400 text-xs text-white shadow-2xl backdrop-blur-md">
+    <i data-lucide="check" class="w-4 h-4 text-cyan-400"></i>
+    <span id="index-toast-text">¡Enlace copiado!</span>
+  </div>
+
   <script>
     lucide.createIcons();
 
@@ -127,7 +133,17 @@
     function copyCurrentUrl(path) {
       const full = `${window.location.origin}${path}`;
       navigator.clipboard.writeText(full).then(() => {
-        alert(`¡Enlace copiado!: ${full}`);
+        const toast = document.getElementById('index-toast');
+        const text = document.getElementById('index-toast-text');
+        if (toast && text) {
+          text.textContent = `¡Enlace copiado!: ${full}`;
+          toast.classList.remove('hidden');
+          toast.classList.add('flex');
+          setTimeout(() => {
+            toast.classList.remove('flex');
+            toast.classList.add('hidden');
+          }, 2800);
+        }
       });
     }
   </script>

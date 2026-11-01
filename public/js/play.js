@@ -146,7 +146,7 @@ if (btnReveal) {
 
     socket.emit('get_player_card', { playerIndex: targetIdx }, (response) => {
       if (!response || response.error) {
-        alert(response?.error || 'Error al obtener la carta');
+        showInAppToast(response?.error || 'Error al obtener la carta');
         return;
       }
 
@@ -257,10 +257,48 @@ function renderAccusing(state) {
   if (window.lucide) lucide.createIcons();
 }
 
-window.confirmAccusation = function(targetId, targetName) {
-  if (confirm(`¿Están seguros de que desean acusar a "${targetName}" de ser el impostor?`)) {
-    socket.emit('accuse_player', { targetId });
+function showInAppToast(text) {
+  const toast = document.getElementById('in-app-toast');
+  const toastText = document.getElementById('in-app-toast-text');
+  if (toast && toastText) {
+    toastText.textContent = text;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.remove('flex');
+      toast.classList.add('hidden');
+    }, 2800);
   }
+}
+
+window.confirmAccusation = function(targetId, targetName) {
+  const modal = document.getElementById('custom-confirm-modal');
+  const title = document.getElementById('custom-confirm-title');
+  const msg = document.getElementById('custom-confirm-msg');
+  const btnConfirm = document.getElementById('btn-modal-confirm');
+  const btnCancel = document.getElementById('btn-modal-cancel');
+
+  if (!modal) {
+    socket.emit('accuse_player', { targetId });
+    return;
+  }
+
+  title.textContent = `¿Acusar a "${targetName}"?`;
+  msg.textContent = `Si aciertan y es el impostor, ¡ganan la partida! Si es inocente, "${targetName}" quedará eliminado del juego.`;
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+
+  btnConfirm.onclick = () => {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+    socket.emit('accuse_player', { targetId });
+  };
+
+  btnCancel.onclick = () => {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  };
 };
 
 const btnCancelAccusing = document.getElementById('btn-cancel-accusing');

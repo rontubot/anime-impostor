@@ -278,6 +278,34 @@
 
   </main>
 
+  <!-- IN-APP CONFIRMATION MODAL -->
+  <div id="custom-confirm-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center z-50 p-4">
+    <div class="glass-panel-neon p-6 max-w-sm w-full border-2 border-[#ff2a5f] rounded-2xl text-center shadow-2xl shadow-pink-950/70 slide-up-center">
+      <div class="w-12 h-12 rounded-xl bg-pink-950/60 border border-pink-500/50 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="crosshair" class="w-6 h-6 text-[#ff2a5f]"></i>
+      </div>
+      <span class="badge-cyber badge-red text-[10px] mb-2">CONFIRMAR ACUSACIÓN</span>
+      <h3 id="custom-confirm-title" class="font-cyber font-bold text-white text-lg mb-2">¿Están seguros?</h3>
+      <p id="custom-confirm-msg" class="text-xs text-slate-300 mb-6 leading-relaxed">
+        ¿Desean acusar a este jugador?
+      </p>
+      <div class="grid grid-cols-2 gap-3">
+        <button id="btn-modal-cancel" class="btn-cyber btn-secondary py-3 text-xs">
+          CANCELAR
+        </button>
+        <button id="btn-modal-confirm" class="btn-cyber btn-primary py-3 text-xs">
+          SÍ, ACUSAR
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING IN-APP TOAST -->
+  <div id="in-app-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/95 border border-cyan-400 text-xs text-white shadow-2xl backdrop-blur-md">
+    <i data-lucide="info" class="w-4 h-4 text-cyan-400"></i>
+    <span id="in-app-toast-text">Notificación</span>
+  </div>
+
   <!-- BOTTOM FOOTER -->
   <footer class="text-center py-2 text-[11px] text-slate-500 border-t border-slate-900">
     Anime Impostor • Modo Pasa el Teléfono

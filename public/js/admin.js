@@ -37,12 +37,55 @@ function setupUrls() {
   }
 }
 
+function showAdminToast(text) {
+  const toast = document.getElementById('admin-toast');
+  const toastText = document.getElementById('admin-toast-text');
+  if (toast && toastText) {
+    toastText.textContent = text;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.remove('flex');
+      toast.classList.add('hidden');
+    }, 2800);
+  }
+}
+
+function showAdminConfirm(title, msg, onConfirm) {
+  const modal = document.getElementById('admin-confirm-modal');
+  const titleEl = document.getElementById('admin-confirm-title');
+  const msgEl = document.getElementById('admin-confirm-msg');
+  const btnConfirm = document.getElementById('btn-admin-confirm');
+  const btnCancel = document.getElementById('btn-admin-cancel');
+
+  if (!modal) {
+    if (onConfirm) onConfirm();
+    return;
+  }
+
+  titleEl.textContent = title;
+  msgEl.textContent = msg;
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+
+  btnConfirm.onclick = () => {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+    if (onConfirm) onConfirm();
+  };
+
+  btnCancel.onclick = () => {
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+  };
+}
+
 window.copyToClipboard = function(elementId) {
   const el = document.getElementById(elementId);
   if (el) {
     el.select();
     navigator.clipboard.writeText(el.value).then(() => {
-      alert('¡Enlace copiado al portapapeles!');
+      showAdminToast('¡Enlace copiado al portapapeles!');
     });
   }
 };
@@ -153,7 +196,7 @@ document.getElementById('btn-add-player').addEventListener('click', () => {
     });
     renderPlayersInputs();
   } else {
-    alert('El juego admite un máximo de 8 jugadores.');
+    showAdminToast('El juego admite un máximo de 8 jugadores.');
   }
 });
 
@@ -178,7 +221,7 @@ function saveAndBroadcastPlayers() {
 
 document.getElementById('btn-save-players').addEventListener('click', () => {
   saveAndBroadcastPlayers();
-  alert('¡Lista de jugadores guardada y sincronizada!');
+  showAdminToast('¡Lista de jugadores guardada y sincronizada!');
 });
 
 // IMPOSTOR COUNT
@@ -215,9 +258,13 @@ document.getElementById('btn-repick-starter').addEventListener('click', () => {
 });
 
 document.getElementById('btn-reset-game').addEventListener('click', () => {
-  if (confirm('¿Reiniciar la partida y volver a la sala de espera?')) {
-    socket.emit('admin_reset_game');
-  }
+  showAdminConfirm(
+    '¿Reiniciar la Partida?',
+    'Se restablecerá la sala al lobby inicial y se limpiarán los roles actuales.',
+    () => {
+      socket.emit('admin_reset_game');
+    }
+  );
 });
 
 // OVERLAY SECRET TOGGLE
@@ -240,11 +287,11 @@ document.getElementById('form-custom-card').addEventListener('submit', (e) => {
   })
   .then(res => res.json())
   .then(data => {
-    alert(`¡Personaje "${name}" agregado con éxito al mazo!`);
+    showAdminToast(`¡Personaje "${name}" agregado al mazo!`);
     e.target.reset();
   })
   .catch(err => {
-    alert('Error al agregar el personaje');
+    showAdminToast('Error al agregar el personaje');
   });
 });
 
