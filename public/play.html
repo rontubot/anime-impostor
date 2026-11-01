@@ -10,7 +10,6 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="/styles/style.css">
   <style>
-    /* Mobile specific touch optimizations */
     html, body {
       touch-action: manipulation;
       user-select: none;
@@ -33,10 +32,8 @@
     </div>
     
     <div class="flex items-center gap-2">
-      <!-- Live Game Timer Indicator -->
-      <div id="play-timer-pill" class="badge-cyber badge-cyan text-xs hidden">
-        <i data-lucide="clock" class="w-3 h-3"></i>
-        <span id="play-timer-text">03:00</span>
+      <div id="play-round-pill" class="badge-cyber badge-purple text-xs hidden">
+        <span id="play-round-text">RONDA 1</span>
       </div>
       <div id="connection-dot" class="w-2.5 h-2.5 rounded-full bg-emerald-400" title="Conectado"></div>
     </div>
@@ -102,7 +99,6 @@
           <i data-lucide="shield-check" class="w-4 h-4"></i> ¡ERES INOCENTE!
         </div>
 
-        <!-- Anime Character Portrait -->
         <div class="relative w-44 h-44 rounded-2xl overflow-hidden border-4 border-emerald-400 shadow-xl mb-4 bg-slate-900">
           <img id="innocent-char-img" src="" alt="Personaje Secreto" class="w-full h-full object-cover object-top">
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -122,7 +118,7 @@
           <div class="font-bold text-white mb-1 flex items-center gap-1.5">
             <i data-lucide="info" class="w-3.5 h-3.5 text-emerald-400"></i> Tu Misión:
           </div>
-          Convence a los demás de que conoces este personaje dando palabras o pistas sutiles, pero ¡cuidado de no revelarlo directamente al impostor!
+          Convence a los demás de que conoces este personaje dando pistas sutiles, pero ¡cuidado de no revelarlo directamente al impostor!
         </div>
 
         <button id="btn-hide-innocent" class="btn-cyber btn-secondary w-full py-3.5 text-sm">
@@ -131,9 +127,9 @@
         </button>
       </div>
 
-      <!-- IMPOSTOR CARD -->
+      <!-- IMPOSTOR CARD (STATIC, NO SHAKE, NO SOUND) -->
       <div id="card-impostor" class="hidden w-full glass-panel-neon p-5 border-2 border-[#ff2a5f] shadow-2xl shadow-pink-950/60 flex-col items-center">
-        <div class="badge-cyber badge-red text-xs px-3 py-1 mb-3 animate-pulse">
+        <div class="badge-cyber badge-red text-xs px-3 py-1 mb-3">
           <i data-lucide="skull" class="w-4 h-4"></i> ¡ERES EL IMPOSTOR!
         </div>
 
@@ -170,62 +166,110 @@
 
     </div>
 
-    <!-- STATE 4: ALL PLAYERS READY (TABLE DISCUSSION PHASE) -->
-    <div id="view-discussion" class="hidden flex-col items-center text-center p-6 glass-panel w-full">
-      <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center mb-4 shadow-xl shadow-cyan-500/30">
-        <i data-lucide="messages-square" class="w-10 h-10 text-white animate-pulse"></i>
+    <!-- STATE 4: PLAYING / DISCUSSION (WHO STARTS & TABLE MODE) -->
+    <div id="view-playing" class="hidden flex-col items-center text-center p-6 glass-panel w-full">
+      <div class="badge-cyber badge-cyan text-xs mb-3">
+        <span id="playing-round-badge">RONDA 1</span> • EN DEBATE
       </div>
 
-      <span class="badge-cyber badge-cyan text-xs mb-2">FASE DE DEBATE</span>
-      <h2 class="font-cyber text-2xl font-black text-white mb-2">¡DEJEN EL TELÉFONO!</h2>
-      <p class="text-sm text-slate-300 mb-6">
-        Todos los jugadores ya han visto su carta. Coloquen el teléfono en el centro de la mesa y comiencen las preguntas y debate.
-      </p>
+      <!-- Who starts box -->
+      <div class="w-full bg-gradient-to-r from-cyan-950/70 to-blue-950/70 border-2 border-cyan-400 rounded-2xl p-5 mb-5 shadow-xl shadow-cyan-950/50">
+        <div class="flex items-center justify-center gap-2 text-xs uppercase font-bold text-cyan-300 mb-1">
+          <i data-lucide="mic" class="w-4 h-4"></i> Empieza hablando:
+        </div>
+        <div id="playing-starter-name" class="font-cyber text-3xl font-black text-white tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-white">
+          Jugador
+        </div>
+        <p class="text-[11px] text-slate-300 mt-2">
+          Dejen el teléfono en el centro. Esta persona inicia diciendo su pista o haciendo una pregunta.
+        </p>
+      </div>
 
-      <!-- Live timer container in phone -->
-      <div class="bg-slate-900/90 rounded-2xl p-5 border border-cyan-500/30 w-full mb-6">
-        <span class="text-xs uppercase font-bold text-slate-400 block mb-1">Tiempo de Discusión</span>
-        <div id="disc-timer-display" class="font-cyber text-4xl font-extrabold text-[#00f0ff] tracking-wider">
-          03:00
+      <!-- Alive players list -->
+      <div class="w-full bg-slate-900/80 rounded-xl p-3 border border-slate-800 text-left mb-6">
+        <span class="text-[11px] uppercase font-bold text-slate-400 block mb-2">Jugadores activos en juego:</span>
+        <div id="playing-alive-list" class="flex flex-wrap gap-1.5 text-xs">
+          <!-- Populated -->
         </div>
       </div>
 
-      <p class="text-xs text-slate-400">
-        Al terminar el tiempo, el streamer iniciará la fase de votación.
-      </p>
+      <!-- Button: ELEGIR IMPOSTOR -->
+      <button id="btn-trigger-accusing" class="btn-cyber btn-primary w-full py-4 text-base shadow-xl shadow-pink-600/40">
+        <i data-lucide="crosshair" class="w-5 h-5"></i>
+        <span>🚨 ELEGIR IMPOSTOR</span>
+      </button>
     </div>
 
-    <!-- STATE 5: VOTING PHASE -->
-    <div id="view-voting" class="hidden flex-col items-center text-center p-5 glass-panel w-full">
+    <!-- STATE 5: ACCUSING PHASE (CHOOSE 1 PLAYER) -->
+    <div id="view-accusing" class="hidden flex-col items-center text-center p-5 glass-panel w-full">
       <div class="badge-cyber badge-red text-xs mb-2">
-        <i data-lucide="target" class="w-3.5 h-3.5"></i> HORA DE VOTAR
+        <i data-lucide="crosshair" class="w-3.5 h-3.5"></i> ACUSACIÓN
       </div>
-      <h2 class="font-cyber text-xl font-bold text-white mb-1">¿QUIÉN ES EL IMPOSTOR?</h2>
+      <h2 class="font-cyber text-xl font-bold text-white mb-1">¿A QUIÉN ACUSAN DE SER EL IMPOSTOR?</h2>
       <p class="text-xs text-slate-300 mb-4">
-        Selecciona al jugador que consideras más sospechoso:
+        Selecciona a 1 jugador. La app revelará inmediatamente si es o no el impostor:
       </p>
 
-      <div id="voting-candidates-grid" class="grid grid-cols-1 gap-2.5 w-full mb-4 max-h-[50vh] overflow-y-auto pr-1">
+      <div id="accusing-candidates-grid" class="grid grid-cols-1 gap-2.5 w-full mb-4 max-h-[50vh] overflow-y-auto pr-1">
         <!-- Rendered dynamically -->
       </div>
 
-      <div id="vote-confirmed-msg" class="hidden bg-emerald-950/60 border border-emerald-500/50 rounded-xl p-3 text-xs text-emerald-300 w-full">
-        <i data-lucide="check-circle-2" class="w-4 h-4 inline mr-1"></i> ¡Tu voto ha sido registrado! Pasa el teléfono si falta alguien por votar.
-      </div>
+      <button id="btn-cancel-accusing" class="btn-cyber btn-secondary w-full py-2.5 text-xs">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al debate
+      </button>
     </div>
 
-    <!-- STATE 6: RESULTS PHASE -->
-    <div id="view-results" class="hidden flex-col items-center text-center p-6 glass-panel w-full">
-      <div class="badge-cyber badge-purple text-xs mb-3">FIN DE LA PARTIDA</div>
-      <h2 id="phone-results-title" class="font-cyber text-2xl font-black text-white mb-2">¡RESULTADOS!</h2>
-      <p class="text-xs text-slate-300 mb-6">Miren la pantalla del stream para la revelación completa.</p>
+    <!-- STATE 6: ROUND RESULT (TELLS IF ACCUSED WAS IMPOSTOR OR NOT) -->
+    <div id="view-round-result" class="hidden flex-col items-center text-center p-6 glass-panel w-full">
+      <div id="rr-badge" class="badge-cyber badge-purple text-xs mb-3">VEREDICTO DE LA RONDA</div>
+      
+      <h2 id="rr-target-name" class="font-cyber text-2xl font-black text-white mb-2">
+        Jugador
+      </h2>
 
-      <div id="phone-impostors-list" class="w-full flex flex-col gap-2 mb-6">
-        <!-- populated -->
+      <!-- Verdict Banner -->
+      <div id="rr-verdict-banner" class="w-full p-4 rounded-xl font-bold text-base my-2">
+        VEREDICTO
       </div>
 
-      <div class="bg-slate-900/80 rounded-xl p-3 border border-slate-800 text-xs text-slate-300 w-full">
-        Esperando a que el streamer inicie una nueva partida...
+      <p id="rr-detail-text" class="text-xs text-slate-300 mb-5 leading-relaxed">
+        Detalles
+      </p>
+
+      <!-- Next round starter preview -->
+      <div class="w-full bg-slate-900/90 border border-cyan-500/40 rounded-xl p-4 mb-6 text-left">
+        <span class="text-[10px] uppercase font-bold text-cyan-400 block mb-1">Para la siguiente ronda:</span>
+        <div class="flex items-center gap-2">
+          <i data-lucide="mic" class="w-4 h-4 text-cyan-400"></i>
+          <span class="text-xs text-slate-300">Empieza hablando:</span>
+          <strong id="rr-next-starter-name" class="text-white font-cyber text-sm">Jugador</strong>
+        </div>
+      </div>
+
+      <button id="btn-continue-next-round" class="btn-cyber btn-cyan w-full py-3.5 text-sm">
+        <span>CONTINUAR SIGUIENTE RONDA</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <!-- STATE 7: GAME OVER -->
+    <div id="view-game-over" class="hidden flex-col items-center text-center p-6 glass-panel w-full">
+      <div class="badge-cyber badge-red text-xs mb-3">FIN DE LA PARTIDA</div>
+      <h2 id="go-title" class="font-cyber text-2xl font-black text-white mb-2">¡LOS INOCENTES GANAN!</h2>
+      <p id="go-subtitle" class="text-xs text-slate-300 mb-6">Detalle final de la partida.</p>
+
+      <!-- Secret Anime Card Revealed -->
+      <div id="go-secret-card" class="bg-slate-900 border border-slate-700 rounded-xl p-4 flex items-center gap-4 w-full mb-6 text-left">
+        <img id="go-secret-img" src="" class="w-14 h-14 rounded-lg object-cover border border-cyan-400">
+        <div>
+          <span class="text-[10px] text-slate-400 uppercase font-bold">El anime secreto era:</span>
+          <div id="go-secret-name" class="font-cyber font-bold text-white text-base">Nombre</div>
+          <div id="go-secret-anime" class="text-xs text-cyan-300">Anime</div>
+        </div>
+      </div>
+
+      <div class="text-xs text-slate-400">
+        Pídele al streamer que configure o inicie una nueva partida desde su panel.
       </div>
     </div>
 

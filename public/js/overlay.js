@@ -4,17 +4,19 @@ const socket = io();
 const phaseLabels = {
   LOBBY: 'En Espera',
   VIEWING: 'Viendo Cartas',
-  DISCUSSION: 'Debate / Preguntas',
-  VOTING: 'Votación en Curso',
-  RESULTS: 'Resultados Finales'
+  PLAYING: 'En Debate',
+  ACCUSING: 'Eligiendo Impostor',
+  ROUND_RESULT: 'Resultado de Acusación',
+  GAME_OVER: 'Fin de la Partida'
 };
 
 const phaseDotColors = {
   LOBBY: 'bg-slate-400',
   VIEWING: 'bg-amber-400 animate-pulse',
-  DISCUSSION: 'bg-[#00f0ff] animate-pulse',
-  VOTING: 'bg-[#ff2a5f] animate-ping',
-  RESULTS: 'bg-emerald-400'
+  PLAYING: 'bg-[#00f0ff] animate-pulse',
+  ACCUSING: 'bg-[#ff2a5f] animate-ping',
+  ROUND_RESULT: 'bg-purple-400',
+  GAME_OVER: 'bg-emerald-400'
 };
 
 let currentPhase = null;
@@ -26,41 +28,6 @@ socket.on('connect', () => {
 socket.on('state_update', (state) => {
   renderOverlay(state);
 });
-
-socket.on('timer_tick', ({ timerCurrent }) => {
-  updateTimerDisplay(timerCurrent);
-});
-
-socket.on('play_sound', (soundName) => {
-  if (window.soundManager) {
-    if (soundName === 'tick') window.soundManager.playTick();
-    if (soundName === 'warning') window.soundManager.playWarning();
-    if (soundName === 'card_flip') window.soundManager.playCardReveal();
-    if (soundName === 'impostor_alert') window.soundManager.playImpostorAlert();
-    if (soundName === 'victory') window.soundManager.playVictory();
-  }
-});
-
-function formatTime(seconds) {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-}
-
-function updateTimerDisplay(seconds) {
-  const display = document.getElementById('timer-display');
-  const timerBox = document.getElementById('timer-box');
-  if (!display) return;
-  display.textContent = formatTime(seconds);
-
-  if (seconds <= 15 && seconds > 0) {
-    timerBox.classList.add('border-red-500', 'shadow-lg', 'shadow-red-500/30');
-    display.classList.add('text-red-400', 'animate-pulse');
-  } else {
-    timerBox.classList.remove('border-red-500', 'shadow-lg', 'shadow-red-500/30');
-    display.classList.remove('text-red-400', 'animate-pulse');
-  }
-}
 
 function renderOverlay(state) {
   // Phase update
@@ -74,10 +41,7 @@ function renderOverlay(state) {
     impostorBadge.textContent = `${state.impostorCount} ${state.impostorCount > 1 ? 'IMPOSTORES' : 'IMPOSTOR'}`;
   }
 
-  // Timer
-  updateTimerDisplay(state.timerCurrent);
-
-  // Active viewing player pill
+  // Active viewing player pill (during pass the phone)
   const actionPill = document.getElementById('current-action-pill');
   const activePlayerName = document.getElementById('current-active-player');
   if (state.phase === 'VIEWING' && state.currentViewingPlayer) {
@@ -89,18 +53,32 @@ function renderOverlay(state) {
     actionPill.classList.add('hidden');
   }
 
+  // Starting Player Box (Who starts speaking & round)
+  const starterBox = document.getElementById('starting-player-box');
+  const starterName = document.getElementById('overlay-starting-player');
+  const roundBadge = document.getElementById('overlay-round-badge');
+
+  if (state.startingPlayer && (state.phase === 'PLAYING' || state.phase === 'ACCUSING' || state.phase === 'ROUND_RESULT')) {
+    starterBox.classList.remove('hidden');
+    starterBox.classList.add('flex');
+    starterName.textContent = state.startingPlayer.name;
+    roundBadge.textContent = `RONDA ${state.round}`;
+  } else {
+    starterBox.classList.remove('flex');
+    starterBox.classList.add('hidden');
+  }
+
   // Render Players Left HUD
   renderPlayers(state);
 
   // Render Bottom-Center Secret Card for Stream Viewers
   renderSecretCard(state);
 
-  // Render Results Modal if RESULTS phase
-  renderResultsModal(state);
+  // Render Accusation popup or Game Over modal
+  renderPopups(state);
 
-  // Check phase change cues
   if (currentPhase !== state.phase) {
-    if (state.phase === 'RESULTS') {
+    if (state.phase === 'GAME_OVER' && state.winner === 'INNOCENTS') {
       triggerConfetti();
     }
     currentPhase = state.phase;
@@ -119,8 +97,16 @@ function renderPlayers(state) {
     let statusHtml = '';
     let borderClass = 'border-slate-800/80';
     let bgClass = 'bg-slate-900/85';
+    let textStyle = 'text-slate-200';
 
-    if (state.phase === 'VIEWING') {
+    if (p.isEliminated) {
+      borderClass = 'border-red-900/40 opacity-40';
+      bgClass = 'bg-black/60';
+      textStyle = 'line-through text-slate-500';
+      statusHtml = p.eliminatedAs === 'IMPOSTOR'
+        ? `<span class="badge-cyber badge-red text-[8px]">Impostor 💀</span>`
+        : `<span class="text-[10px] text-slate-500">Inocente ❌</span>`;
+    } else if (state.phase === 'VIEWING') {
       if (idx === state.currentViewingIndex) {
         borderClass = 'border-[#00f0ff] shadow-md shadow-cyan-500/20';
         bgClass = 'bg-cyan-950/40';
@@ -130,13 +116,11 @@ function renderPlayers(state) {
       } else {
         statusHtml = `<span class="text-[10px] text-slate-500">Espera</span>`;
       }
-    } else if (state.phase === 'VOTING') {
-      if (p.votedFor) {
-        statusHtml = `<span class="text-[10px] text-purple-400 font-bold flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Votó</span>`;
-      } else {
-        statusHtml = `<span class="text-[10px] text-amber-400 font-bold animate-pulse">Pensando</span>`;
-      }
-    } else if (state.phase === 'RESULTS') {
+    } else if (state.startingPlayer && p.id === state.startingPlayer.id && (state.phase === 'PLAYING' || state.phase === 'ACCUSING')) {
+      borderClass = 'border-cyan-400 shadow-lg shadow-cyan-500/30';
+      bgClass = 'bg-cyan-950/60';
+      statusHtml = `<span class="badge-cyber badge-cyan text-[9px]"><i data-lucide="mic" class="w-2.5 h-2.5"></i> Empieza</span>`;
+    } else if (state.phase === 'GAME_OVER') {
       if (p.isImpostor) {
         borderClass = 'border-[#ff2a5f] shadow-lg shadow-pink-500/30';
         bgClass = 'bg-red-950/60';
@@ -145,10 +129,9 @@ function renderPlayers(state) {
         statusHtml = `<span class="badge-cyber badge-green text-[9px]">INOCENTE</span>`;
       }
     } else {
-      statusHtml = `<span class="text-[10px] text-slate-400">En mesa</span>`;
+      statusHtml = `<span class="text-[10px] text-slate-400">En juego</span>`;
     }
 
-    // Avatar color palette
     const colors = ['from-pink-500 to-rose-600', 'from-cyan-500 to-blue-600', 'from-violet-500 to-purple-600', 'from-amber-400 to-orange-500', 'from-emerald-400 to-teal-600', 'from-fuchsia-500 to-pink-600', 'from-indigo-500 to-blue-700', 'from-rose-400 to-red-600'];
     const avatarBg = colors[idx % colors.length];
     const initial = p.name ? p.name.charAt(0).toUpperCase() : (idx + 1);
@@ -159,7 +142,7 @@ function renderPlayers(state) {
           <div class="w-6 h-6 rounded-full bg-gradient-to-tr ${avatarBg} flex items-center justify-center text-white font-cyber text-xs font-bold shadow-sm flex-shrink-0">
             ${initial}
           </div>
-          <span class="text-xs font-semibold text-slate-200 truncate max-w-[100px]">${p.name}</span>
+          <span class="text-xs font-semibold ${textStyle} truncate max-w-[100px]">${p.name}</span>
         </div>
         <div class="flex-shrink-0">${statusHtml}</div>
       </div>
@@ -195,50 +178,71 @@ function renderSecretCard(state) {
   }
 }
 
-function renderResultsModal(state) {
-  const modal = document.getElementById('results-modal');
-  if (!modal) return;
+function renderPopups(state) {
+  const accModal = document.getElementById('accusation-popup');
+  const gameoverModal = document.getElementById('gameover-modal');
 
-  if (state.phase === 'RESULTS') {
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
+  // ROUND ACCUSATION RESULT POPUP
+  if (state.phase === 'ROUND_RESULT' && state.lastAccusation && !state.lastAccusation.gameOver) {
+    accModal.classList.remove('hidden');
+    accModal.classList.add('flex');
 
-    const grid = document.getElementById('impostors-reveal-grid');
-    const impostors = state.players.filter(p => p.isImpostor);
-    
-    if (grid) {
-      grid.innerHTML = impostors.map(imp => `
-        <div class="glass-panel-neon p-4 flex flex-col items-center gap-2 max-w-[180px]">
-          <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-red-600 to-pink-600 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-red-500/50">
-            <i data-lucide="skull" class="w-8 h-8"></i>
-          </div>
-          <span class="font-cyber font-bold text-white text-base">${imp.name}</span>
-          <span class="badge-cyber badge-red text-[10px]">¡ERA EL IMPOSTOR!</span>
-        </div>
-      `).join('');
+    const targetName = document.getElementById('acc-target-name');
+    const verdict = document.getElementById('acc-verdict');
+    const detail = document.getElementById('acc-detail');
+    const nextStarter = document.getElementById('acc-next-starter');
+    const nextStarterName = document.getElementById('acc-next-starter-name');
+
+    targetName.textContent = state.lastAccusation.accusedName;
+
+    if (state.lastAccusation.isImpostor) {
+      verdict.className = 'text-lg font-bold my-4 py-2 px-4 rounded-xl bg-red-950/80 border border-red-500 text-red-300';
+      verdict.textContent = '¡ERA EL IMPOSTOR! 💀';
+      detail.textContent = '¡Fue descubierto! Pero aún queda otro impostor en juego.';
+    } else {
+      verdict.className = 'text-lg font-bold my-4 py-2 px-4 rounded-xl bg-slate-900 border border-emerald-500 text-emerald-300';
+      verdict.textContent = 'NO ERA EL IMPOSTOR (Era Inocente 🟢)';
+      detail.textContent = 'Fue eliminado injustamente y queda fuera de la partida.';
     }
 
-    const resImg = document.getElementById('result-secret-img');
-    const resTitle = document.getElementById('result-secret-title');
+    if (state.lastAccusation.nextStartingPlayer) {
+      nextStarter.classList.remove('hidden');
+      nextStarterName.textContent = state.lastAccusation.nextStartingPlayer.name;
+    } else {
+      nextStarter.classList.add('hidden');
+    }
+  } else {
+    accModal.classList.remove('flex');
+    accModal.classList.add('hidden');
+  }
+
+  // GAME OVER POPUP
+  if (state.phase === 'GAME_OVER') {
+    gameoverModal.classList.remove('hidden');
+    gameoverModal.classList.add('flex');
+
+    const title = document.getElementById('gameover-title');
+    const sub = document.getElementById('gameover-subtitle');
+    const resImg = document.getElementById('gameover-secret-img');
+    const resTitle = document.getElementById('gameover-secret-title');
+
+    if (state.winner === 'INNOCENTS') {
+      title.textContent = '¡LOS INOCENTES HAN GANADO! 🏆';
+      title.className = 'font-cyber text-3xl md:text-4xl font-black text-emerald-400 mb-2 tracking-wide';
+      sub.textContent = '¡Todos los impostores han sido descubiertos!';
+    } else {
+      title.textContent = '¡LOS IMPOSTORES HAN GANADO! 😈';
+      title.className = 'font-cyber text-3xl md:text-4xl font-black text-[#ff2a5f] mb-2 tracking-wide';
+      sub.textContent = 'Quedó igual o mayor número de impostores que inocentes. ¡Engaño total!';
+    }
+
     if (state.secretCard) {
       if (resImg) resImg.src = state.secretCard.image;
       if (resTitle) resTitle.textContent = `${state.secretCard.name} (${state.secretCard.anime})`;
     }
-
-    const title = document.getElementById('result-title');
-    const sub = document.getElementById('result-subtitle');
-    if (state.impostorWon === false) {
-      title.textContent = '¡LOS INOCENTES GANAN!';
-      title.className = 'font-cyber text-3xl md:text-4xl font-black text-emerald-400 mb-2 tracking-wide';
-      sub.textContent = '¡Descubrieron a tiempo al impostor entre ellos!';
-    } else {
-      title.textContent = '¡EL IMPOSTOR HA GANADO!';
-      title.className = 'font-cyber text-3xl md:text-4xl font-black text-[#ff2a5f] mb-2 tracking-wide';
-      sub.textContent = 'El impostor logró engañar a todos con sus respuestas.';
-    }
   } else {
-    modal.classList.remove('flex');
-    modal.classList.add('hidden');
+    gameoverModal.classList.remove('flex');
+    gameoverModal.classList.add('hidden');
   }
 }
 

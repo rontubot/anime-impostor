@@ -11,7 +11,6 @@ let currentPlayers = [
 let impostorCount = 1;
 let latestState = null;
 
-// Load saved players from localStorage if available
 try {
   const saved = localStorage.getItem('anime_impostor_players');
   if (saved) {
@@ -22,7 +21,6 @@ try {
   }
 } catch (e) {}
 
-// Populate URLs & QR Code
 function setupUrls() {
   const origin = window.location.origin;
   const overlayUrl = `${origin}/overlay`;
@@ -51,7 +49,6 @@ window.copyToClipboard = function(elementId) {
 
 socket.on('connect', () => {
   setupUrls();
-  // Sync players list initially
   socket.emit('admin_set_players', currentPlayers);
 });
 
@@ -60,35 +57,33 @@ socket.on('state_update', (state) => {
   renderAdminState(state);
 });
 
-socket.on('timer_tick', ({ timerCurrent }) => {
-  const tEl = document.getElementById('admin-timer');
-  if (tEl) tEl.textContent = formatTime(timerCurrent);
-});
-
-function formatTime(seconds) {
-  const m = Math.floor(seconds / 60);
-  const s = seconds % 60;
-  return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-}
-
 function renderAdminState(state) {
   // Phase badge
   const phaseBadge = document.getElementById('admin-phase-badge');
   const phasesMap = {
     LOBBY: { text: 'ESPERANDO INICIO', color: 'bg-emerald-400' },
     VIEWING: { text: 'PASANDO EL TELÉFONO', color: 'bg-amber-400' },
-    DISCUSSION: { text: 'DEBATE / DISCUSIÓN', color: 'bg-cyan-400' },
-    VOTING: { text: 'VOTACIÓN', color: 'bg-purple-500' },
-    RESULTS: { text: 'RESULTADOS', color: 'bg-pink-500' }
+    PLAYING: { text: 'EN DEBATE', color: 'bg-cyan-400' },
+    ACCUSING: { text: 'ELIGIENTO IMPOSTOR', color: 'bg-pink-500' },
+    ROUND_RESULT: { text: 'RESULTADO DE RONDA', color: 'bg-purple-500' },
+    GAME_OVER: { text: 'PARTIDA TERMINADA', color: 'bg-emerald-500' }
   };
   const currentP = phasesMap[state.phase] || { text: state.phase, color: 'bg-blue-400' };
   if (phaseBadge) {
     phaseBadge.innerHTML = `<span class="w-3 h-3 rounded-full ${currentP.color} animate-pulse"></span> <span>${currentP.text}</span>`;
   }
 
-  // Timer
-  const tEl = document.getElementById('admin-timer');
-  if (tEl) tEl.textContent = formatTime(state.timerCurrent);
+  // Starting speaker display
+  const starterDisplay = document.getElementById('admin-starter-display');
+  if (starterDisplay) {
+    starterDisplay.textContent = state.startingPlayer ? state.startingPlayer.name : '-';
+  }
+
+  // Round indicator
+  const roundInd = document.getElementById('admin-round-indicator');
+  if (roundInd) {
+    roundInd.innerHTML = `Ronda: <strong class="text-white">${state.round}</strong>`;
+  }
 
   // Host secret card preview
   const prevImg = document.getElementById('host-preview-img');
@@ -204,40 +199,25 @@ window.setImpostorCount = function(count) {
 // ACTIONS
 document.getElementById('btn-start-game').addEventListener('click', () => {
   saveAndBroadcastPlayers();
-
   const category = document.getElementById('select-category').value;
-  const timerDuration = parseInt(document.getElementById('select-timer-duration').value, 10);
-
   socket.emit('admin_start_game', {
     category,
-    impostorCount,
-    timerDuration
+    impostorCount
   });
 });
 
-document.getElementById('btn-phase-discussion').addEventListener('click', () => {
-  socket.emit('admin_set_phase', 'DISCUSSION');
+document.getElementById('btn-trigger-accuse').addEventListener('click', () => {
+  socket.emit('start_accusing');
 });
 
-document.getElementById('btn-phase-voting').addEventListener('click', () => {
-  socket.emit('admin_set_phase', 'VOTING');
+document.getElementById('btn-repick-starter').addEventListener('click', () => {
+  socket.emit('admin_pick_starter');
 });
 
-document.getElementById('btn-phase-results').addEventListener('click', () => {
-  socket.emit('admin_set_phase', 'RESULTS');
-});
-
-// TIMER CONTROLS
-document.getElementById('btn-timer-start').addEventListener('click', () => {
-  socket.emit('admin_timer_action', 'start');
-});
-
-document.getElementById('btn-timer-pause').addEventListener('click', () => {
-  socket.emit('admin_timer_action', 'pause');
-});
-
-document.getElementById('btn-timer-reset').addEventListener('click', () => {
-  socket.emit('admin_timer_action', 'reset');
+document.getElementById('btn-reset-game').addEventListener('click', () => {
+  if (confirm('¿Reiniciar la partida y volver a la sala de espera?')) {
+    socket.emit('admin_reset_game');
+  }
 });
 
 // OVERLAY SECRET TOGGLE
@@ -268,6 +248,5 @@ document.getElementById('form-custom-card').addEventListener('submit', (e) => {
   });
 });
 
-// Initialize UI
 renderPlayersInputs();
 setupUrls();

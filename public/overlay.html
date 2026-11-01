@@ -35,20 +35,25 @@
           </div>
         </div>
 
-        <!-- Current Active Action pill (e.g. "Turno de Pedro") -->
+        <!-- Current Active Action pill (during pass the phone) -->
         <div id="current-action-pill" class="glass-panel px-4 py-2 hidden items-center gap-2 border border-cyan-500/30">
-          <i data-lucide="smartphone" class="w-4 h-4 text-[#00f0ff] animate-bounce"></i>
+          <i data-lucide="smartphone" class="w-4 h-4 text-[#00f0ff]"></i>
           <span class="text-xs text-slate-300">Viendo carta:</span>
           <span id="current-active-player" class="text-xs font-bold text-[#00f0ff] font-cyber">Jugador</span>
         </div>
       </div>
 
-      <!-- Top Right: Cyber Timer -->
-      <div id="timer-box" class="glass-panel px-5 py-2 flex items-center gap-3 border border-slate-700/50">
-        <i data-lucide="timer" class="w-5 h-5 text-[#00f0ff]"></i>
-        <div class="flex flex-col items-end">
-          <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Tiempo</span>
-          <span id="timer-display" class="font-cyber text-2xl font-bold text-white tracking-wider">03:00</span>
+      <!-- Top Right: WHO STARTS SPEAKING & ROUND -->
+      <div id="starting-player-box" class="glass-panel px-5 py-2 hidden items-center gap-3 border border-cyan-500/50 shadow-lg shadow-cyan-950/40">
+        <div class="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-400 flex items-center justify-center">
+          <i data-lucide="mic" class="w-4 h-4 text-cyan-400"></i>
+        </div>
+        <div class="flex flex-col items-start">
+          <div class="flex items-center gap-2">
+            <span id="overlay-round-badge" class="badge-cyber badge-purple text-[9px] px-1.5 py-0">RONDA 1</span>
+            <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Empieza hablando:</span>
+          </div>
+          <span id="overlay-starting-player" class="font-cyber text-base font-bold text-white tracking-wide">Jugador</span>
         </div>
       </div>
     </header>
@@ -61,17 +66,15 @@
     </aside>
 
     <!-- CENTER-BOTTOM WIDGET: SECRET ANIME / CHARACTER (STREAM VIEWERS EXCLUSIVE) -->
-    <!-- User requirement: chico en el centro abajo, personaje e imagen si aplica -->
     <div class="w-full flex justify-center pb-2 pointer-events-auto">
       <div id="secret-card-container" class="hidden transition-all duration-500 transform translate-y-0">
         <div class="glass-panel px-4 py-3 flex items-center gap-4 border border-[#ff2a5f]/40 shadow-2xl shadow-pink-900/30 max-w-lg rounded-2xl relative overflow-hidden backdrop-blur-xl">
-          <!-- Cyber ambient lighting stripe -->
           <div class="absolute -top-10 -left-10 w-24 h-24 bg-[#ff2a5f]/30 rounded-full blur-2xl"></div>
           <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-[#00f0ff]/20 rounded-full blur-2xl"></div>
 
           <!-- Character Image -->
           <div class="relative w-16 h-16 rounded-xl overflow-hidden border-2 border-[#00f0ff] flex-shrink-0 shadow-md shadow-cyan-500/30 bg-slate-900">
-            <img id="secret-char-img" src="" alt="Anime Character" class="w-full h-full object-cover object-top transition-transform hover:scale-110">
+            <img id="secret-char-img" src="" alt="Anime Character" class="w-full h-full object-cover object-top">
           </div>
 
           <!-- Info -->
@@ -96,34 +99,54 @@
       </div>
     </div>
 
-    <!-- FULL SCREEN MODAL: DRAMATIC RESULTS & REVEAL -->
-    <div id="results-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center z-50 pointer-events-auto">
+    <!-- MODAL / POPUP: ACCUSATION RESULT BANNER (INOCENTE O IMPOSTOR) -->
+    <div id="accusation-popup" class="fixed inset-0 bg-black/75 backdrop-blur-sm hidden items-center justify-center z-50 pointer-events-auto">
+      <div id="accusation-box" class="glass-panel p-8 max-w-lg w-full mx-4 border-2 border-[#ff2a5f] text-center relative overflow-hidden slide-up-center">
+        <div id="acc-badge" class="badge-cyber badge-red text-xs px-4 py-1 mb-3 inline-flex">
+          ACUSACIÓN DE IMPOSTOR
+        </div>
+
+        <h2 id="acc-target-name" class="font-cyber text-3xl font-black text-white mb-2 tracking-wide">
+          Jugador
+        </h2>
+
+        <div id="acc-verdict" class="text-lg font-bold my-4 py-2 px-4 rounded-xl">
+          ¿ERA O NO EL IMPOSTOR?
+        </div>
+
+        <p id="acc-detail" class="text-slate-300 text-sm mb-4">
+          Detalles de la ronda...
+        </p>
+
+        <div id="acc-next-starter" class="hidden bg-slate-900/90 border border-cyan-500/40 rounded-xl p-3 text-xs text-cyan-300">
+          🎤 Siguiente persona en empezar la ronda: <strong id="acc-next-starter-name" class="text-white">Nombre</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: FINAL GAME OVER -->
+    <div id="gameover-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md hidden items-center justify-center z-50 pointer-events-auto">
       <div class="glass-panel p-8 max-w-xl w-full mx-4 border-2 border-[#ff2a5f] text-center relative overflow-hidden slide-up-center">
         <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#ff2a5f]/30 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div id="result-status-badge" class="badge-cyber badge-red text-xs px-4 py-1 mb-4 inline-flex">
-          ¡REVELACIÓN FINAL!
+        <div class="badge-cyber badge-red text-xs px-4 py-1 mb-4 inline-flex">
+          ¡FIN DE LA PARTIDA!
         </div>
 
-        <h2 id="result-title" class="font-cyber text-3xl md:text-4xl font-black text-white mb-2 tracking-wide">
-          ¿QUIÉN ERA EL IMPOSTOR?
+        <h2 id="gameover-title" class="font-cyber text-3xl md:text-4xl font-black text-white mb-2 tracking-wide">
+          ¡LOS INOCENTES GANAN!
         </h2>
 
-        <p id="result-subtitle" class="text-slate-300 text-sm mb-6">
-          La votación ha terminado. Conozcan al culpable:
+        <p id="gameover-subtitle" class="text-slate-300 text-sm mb-6">
+          El impostor ha sido descubierto.
         </p>
-
-        <!-- Impostor Cards Container -->
-        <div id="impostors-reveal-grid" class="flex flex-wrap justify-center gap-4 mb-6">
-          <!-- Dynamically populated -->
-        </div>
 
         <!-- Secret Card Reference in Results -->
         <div class="bg-slate-900/80 border border-slate-700/60 rounded-xl p-3 flex items-center justify-center gap-3 max-w-sm mx-auto">
-          <img id="result-secret-img" src="" class="w-10 h-10 rounded-lg object-cover border border-cyan-400">
+          <img id="gameover-secret-img" src="" class="w-10 h-10 rounded-lg object-cover border border-cyan-400">
           <div class="text-left">
             <span class="text-[10px] text-slate-400 uppercase font-bold">El anime secreto era</span>
-            <div id="result-secret-title" class="text-sm font-bold text-[#00f0ff]">Nombre - Anime</div>
+            <div id="gameover-secret-title" class="text-sm font-bold text-[#00f0ff]">Nombre - Anime</div>
           </div>
         </div>
       </div>

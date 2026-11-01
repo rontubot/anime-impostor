@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <!-- Quick Links & Actions -->
+      <!-- Quick Links -->
       <div class="flex flex-wrap items-center gap-2">
         <a href="/overlay" target="_blank" class="btn-cyber btn-cyan text-xs py-2 px-3">
           <i data-lucide="tv" class="w-4 h-4"></i> Abrir Overlay OBS
@@ -56,10 +56,13 @@
               </div>
             </div>
 
-            <!-- Timer Live -->
+            <!-- Starting speaker indicator -->
             <div class="text-right">
-              <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Cronómetro</span>
-              <span id="admin-timer" class="font-cyber text-2xl font-bold text-[#00f0ff]">03:00</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Empieza hablando</span>
+              <div class="flex items-center justify-end gap-1.5 mt-0.5">
+                <i data-lucide="mic" class="w-4 h-4 text-cyan-400"></i>
+                <span id="admin-starter-display" class="font-cyber text-base font-bold text-cyan-300">-</span>
+              </div>
             </div>
           </div>
 
@@ -69,7 +72,7 @@
             <div class="flex-1 min-w-0">
               <span class="badge-cyber badge-red text-[9px] mb-1">Palabra Secreta en Juego</span>
               <h3 id="host-preview-name" class="font-cyber font-bold text-white text-base truncate">No iniciada</h3>
-              <p id="host-preview-anime" class="text-xs text-slate-300 truncate">Esperando que inicies la ronda</p>
+              <p id="host-preview-anime" class="text-xs text-slate-300 truncate">Presiona "Iniciar Partida" para sortear un personaje</p>
               <p id="host-preview-hint" class="text-[11px] text-pink-300 mt-1 italic">Pista del impostor: -</p>
             </div>
           </div>
@@ -80,35 +83,26 @@
               <i data-lucide="play" class="w-4 h-4"></i>
               <span>INICIAR PARTIDA</span>
             </button>
-            <button id="btn-phase-discussion" class="btn-cyber btn-secondary py-3 text-xs flex flex-col items-center gap-1">
-              <i data-lucide="message-square" class="w-4 h-4 text-cyan-400"></i>
-              <span>IR A DEBATE</span>
+            <button id="btn-trigger-accuse" class="btn-cyber btn-secondary py-3 text-xs flex flex-col items-center gap-1 border-pink-500/40 text-pink-300">
+              <i data-lucide="crosshair" class="w-4 h-4 text-pink-400"></i>
+              <span>ELEGIR IMPOSTOR</span>
             </button>
-            <button id="btn-phase-voting" class="btn-cyber btn-secondary py-3 text-xs flex flex-col items-center gap-1">
-              <i data-lucide="target" class="w-4 h-4 text-purple-400"></i>
-              <span>IR A VOTACIÓN</span>
+            <button id="btn-repick-starter" class="btn-cyber btn-secondary py-3 text-xs flex flex-col items-center gap-1">
+              <i data-lucide="shuffle" class="w-4 h-4 text-cyan-400"></i>
+              <span>RE-SORTEAR QUIÉN EMPIEZA</span>
             </button>
-            <button id="btn-phase-results" class="btn-cyber btn-secondary py-3 text-xs flex flex-col items-center gap-1 border-pink-500/50">
-              <i data-lucide="trophy" class="w-4 h-4 text-pink-400"></i>
-              <span>REVELAR RESULTADOS</span>
+            <button id="btn-reset-game" class="btn-cyber btn-secondary py-3 text-xs flex flex-col items-center gap-1 border-slate-700">
+              <i data-lucide="rotate-ccw" class="w-4 h-4 text-slate-400"></i>
+              <span>REINICIAR SALA</span>
             </button>
           </div>
 
-          <!-- TIMER ACTIONS & OVERLAY TOGGLE -->
+          <!-- OVERLAY TOGGLE -->
           <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-800">
-            <div class="flex items-center gap-2">
-              <button id="btn-timer-start" class="btn-cyber btn-secondary py-1.5 px-3 text-xs">
-                <i data-lucide="play" class="w-3.5 h-3.5"></i> Reanudar
-              </button>
-              <button id="btn-timer-pause" class="btn-cyber btn-secondary py-1.5 px-3 text-xs">
-                <i data-lucide="pause" class="w-3.5 h-3.5"></i> Pausar
-              </button>
-              <button id="btn-timer-reset" class="btn-cyber btn-secondary py-1.5 px-3 text-xs">
-                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar
-              </button>
+            <div id="admin-round-indicator" class="text-xs text-slate-400 font-cyber">
+              Ronda: <strong class="text-white">1</strong>
             </div>
 
-            <!-- Toggle Overlay secret widget -->
             <label class="flex items-center gap-2 cursor-pointer bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700">
               <input type="checkbox" id="toggle-overlay-secret" checked class="w-4 h-4 rounded text-pink-600 focus:ring-0">
               <span class="text-xs font-semibold text-slate-300">Mostrar carta en Overlay (Viewers)</span>
@@ -190,18 +184,6 @@
                 <option value="Suspenso & Psicológico">Suspenso & Psicológico (Death Note...)</option>
                 <option value="Isekai">Isekai (Re:Zero, Slime, Konosuba...)</option>
                 <option value="Personalizado">Personalizados</option>
-              </select>
-            </div>
-
-            <!-- Timer duration -->
-            <div>
-              <label class="block font-semibold text-slate-300 mb-1.5">Tiempo de debate:</label>
-              <select id="select-timer-duration" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-slate-200 focus:outline-none focus:border-cyan-400">
-                <option value="60">1 Minuto (60s - Rápido)</option>
-                <option value="120">2 Minutos (120s)</option>
-                <option value="180" selected>3 Minutos (180s - Recomendado)</option>
-                <option value="240">4 Minutos (240s)</option>
-                <option value="300">5 Minutos (300s)</option>
               </select>
             </div>
           </div>
