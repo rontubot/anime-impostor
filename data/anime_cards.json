@@ -4,7 +4,7 @@
     "name": "Son Goku",
     "anime": "Dragon Ball Z",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/2/72220.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/246-wsRRr6z1kii8.png",
     "hint": "Pista: Guerrero saiyajin de gran apetito que cambia el color de su cabello al volverse más fuerte."
   },
   {
@@ -12,7 +12,7 @@
     "name": "Vegeta",
     "anime": "Dragon Ball Z",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/3/54823.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b913-NIFkKazWM8VO.png",
     "hint": "Pista: Príncipe orgulloso de frente amplia y eterno rival del protagonista."
   },
   {
@@ -20,7 +20,7 @@
     "name": "Naruto Uzumaki",
     "anime": "Naruto Shippuden",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/2/284121.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b17-phjcWCkRuIhu.png",
     "hint": "Pista: Ninja rubio hiperactivo que sueña con ser el líder de su aldea y adora el ramen."
   },
   {
@@ -28,7 +28,7 @@
     "name": "Sasuke Uchiha",
     "anime": "Naruto Shippuden",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/9/131317.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b13-SISLEw1oAD7a.png",
     "hint": "Pista: Ninja vengador de ojos rojos/morados con técnicas de rayo y fuego."
   },
   {
@@ -36,7 +36,7 @@
     "name": "Monkey D. Luffy",
     "anime": "One Piece",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/9/310307.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40-MNypXsxSRb1R.png",
     "hint": "Pista: Pirata con sombrero de paja cuyo cuerpo se estira como la goma."
   },
   {
@@ -44,7 +44,7 @@
     "name": "Roronoa Zoro",
     "anime": "One Piece",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/3/100534.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b62-S7oAeA9WInjV.png",
     "hint": "Pista: Espadachín de cabello verde que suele perderse en cualquier lugar y usa tres espadas."
   },
   {
@@ -52,47 +52,31 @@
     "name": "Satoru Gojo",
     "anime": "Jujutsu Kaisen",
     "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/6/422238.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
     "hint": "Pista: Hechicero con ojos celestes ocultos bajo una venda/lentes y considerado el más fuerte."
-  },
-  {
-    "id": "sukuna",
-    "name": "Ryomen Sukuna",
-    "anime": "Jujutsu Kaisen",
-    "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/16/424328.jpg",
-    "hint": "Pista: Rey de las maldiciones que posee cuatro brazos en su forma original y tatuajes negros."
   },
   {
     "id": "eren",
     "name": "Eren Jaeger",
-    "anime": "Attack on Titan (Shingeki no Kyojin)",
+    "anime": "Attack on Titan",
     "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/10/216895.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40882-dsj7IP943WFF.jpg",
     "hint": "Pista: Obsesionado con la libertad, puede transformarse en un titán al morderse la mano."
   },
   {
     "id": "levi",
     "name": "Levi Ackerman",
-    "anime": "Attack on Titan (Shingeki no Kyojin)",
+    "anime": "Attack on Titan",
     "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/2/241413.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
     "hint": "Pista: Capitán de baja estatura, obsesivo con la limpieza y letal con el equipo de maniobras tridimensionales."
-  },
-  {
-    "id": "tanjiro",
-    "name": "Tanjiro Kamado",
-    "anime": "Demon Slayer (Kimetsu no Yaiba)",
-    "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/7/386007.jpg",
-    "hint": "Pista: Espadachín de gran olfato con aretes hanafuda y una caja en su espalda."
   },
   {
     "id": "nezuko",
     "name": "Nezuko Kamado",
-    "anime": "Demon Slayer (Kimetsu no Yaiba)",
+    "anime": "Demon Slayer",
     "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/11/386008.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127518-NRlq1CQ1v1ro.png",
     "hint": "Pista: Demonio que duerme para recuperar energía y lleva un bozal de bambú en la boca."
   },
   {
@@ -100,7 +84,7 @@
     "name": "Izuku Midoriya (Deku)",
     "anime": "My Hero Academia",
     "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/7/299404.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89028-8w1I9o1ISHMg.png",
     "hint": "Pista: Héroe peliverde que solía romperse los huesos usando el poder heredado de All Might."
   },
   {
@@ -108,7 +92,7 @@
     "name": "Katsuki Bakugo",
     "anime": "My Hero Academia",
     "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/12/299406.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88892-bdOha3lNcaN6.png",
     "hint": "Pista: Héroe explosivo con pésimo temperamento y sudor similar a la nitroglicerina."
   },
   {
@@ -116,7 +100,7 @@
     "name": "Saitama",
     "anime": "One Punch Man",
     "category": "Comedia & Acción",
-    "image": "https://cdn.myanimelist.net/images/characters/11/294377.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b73935-ON5d0mAcrItd.jpg",
     "hint": "Pista: Héroe calvo con traje amarillo y capa blanca que derrota a casi cualquiera de un solo golpe."
   },
   {
@@ -124,7 +108,7 @@
     "name": "Light Yagami",
     "anime": "Death Note",
     "category": "Suspenso & Psicológico",
-    "image": "https://cdn.myanimelist.net/images/characters/6/63870.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b80-26EhwSsSqQ50.png",
     "hint": "Pista: Estudiante brillante con complejo de Dios que escribe nombres en una libreta sobrenatural."
   },
   {
@@ -132,7 +116,7 @@
     "name": "L Lawliet",
     "anime": "Death Note",
     "category": "Suspenso & Psicológico",
-    "image": "https://cdn.myanimelist.net/images/characters/10/246401.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b71-1W4panC53vfs.png",
     "hint": "Pista: Detective excéntrico de ojeras pronunciadas que se sienta en cuclillas y ama los dulces."
   },
   {
@@ -140,7 +124,7 @@
     "name": "Killua Zoldyck",
     "anime": "Hunter x Hunter",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/2/327920.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b27-Z5O02kQUydpT.jpg",
     "hint": "Pista: Chico de cabello blanco perteneciente a una familia de asesinos élite que domina la electricidad."
   },
   {
@@ -148,7 +132,7 @@
     "name": "Edward Elric",
     "anime": "Fullmetal Alchemist",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/9/72533.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b11-TA5Nuk7EDUZG.jpg",
     "hint": "Pista: Alquimista estatal con brazo y pierna de metal al que le enfurece que le digan enano."
   },
   {
@@ -156,7 +140,7 @@
     "name": "Ichigo Kurosaki",
     "anime": "Bleach",
     "category": "Shonen Clásico",
-    "image": "https://cdn.myanimelist.net/images/characters/2/73199.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5-a7bkJgjhhigE.png",
     "hint": "Pista: Shinigami sustituto de cabello naranja natural que porta una gigantesca espada llamada Zangetsu."
   },
   {
@@ -164,7 +148,7 @@
     "name": "Anya Forger",
     "anime": "Spy x Family",
     "category": "Popular & Comedia",
-    "image": "https://cdn.myanimelist.net/images/characters/12/473775.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b138100-4Li0tWRCa5bQ.png",
     "hint": "Pista: Niña pequeña de cabello rosa y expresiones graciosas que puede leer las mentes de la gente."
   },
   {
@@ -172,7 +156,7 @@
     "name": "Frieren",
     "anime": "Sousou no Frieren",
     "category": "Fantasía",
-    "image": "https://cdn.myanimelist.net/images/characters/10/522503.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b176754-PCnpqIOkjhFk.png",
     "hint": "Pista: Elfa maga milenaria de dos coletas que colecciona hechizos extraños tras la muerte del héroe."
   },
   {
@@ -180,7 +164,7 @@
     "name": "Makima",
     "anime": "Chainsaw Man",
     "category": "Seinen & Suspenso",
-    "image": "https://cdn.myanimelist.net/images/characters/5/487920.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b137080-UHcynYNjb5ZU.png",
     "hint": "Pista: Líder de cazadores de demonios con cabello rojizo, trenza y ojos misteriosos con círculos amarillos."
   },
   {
@@ -188,7 +172,7 @@
     "name": "Denji",
     "anime": "Chainsaw Man",
     "category": "Shonen Moderno",
-    "image": "https://cdn.myanimelist.net/images/characters/3/492449.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b130102-FO1VHNnEnLlB.png",
     "hint": "Pista: Joven con motosierras saliendo de sus brazos y cabeza cuyo único deseo es tener una vida normal."
   },
   {
@@ -196,7 +180,7 @@
     "name": "Marin Kitagawa",
     "anime": "My Dress-Up Darling",
     "category": "Romance & Slice of Life",
-    "image": "https://cdn.myanimelist.net/images/characters/5/456880.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b133676-kV2czE3C8Qls.png",
     "hint": "Pista: Chica alegre y extrovertida de secundaria aficionada al cosplay y a los eroges."
   },
   {
@@ -204,7 +188,7 @@
     "name": "Rem",
     "anime": "Re:Zero",
     "category": "Isekai",
-    "image": "https://cdn.myanimelist.net/images/characters/7/314120.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88575-Ayu8UPDA8NS6.png",
     "hint": "Pista: Sirvienta oni de cabello azul corto que usa un lucero del alba con cadena."
   },
   {
@@ -212,7 +196,7 @@
     "name": "Rimuru Tempest",
     "anime": "That Time I Got Reincarnated as a Slime",
     "category": "Isekai",
-    "image": "https://cdn.myanimelist.net/images/characters/15/368407.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123962-eL9yGV0NLMF7.png",
     "hint": "Pista: Un slime azul con apariencia humana andrógina que lidera una federación de monstruos."
   },
   {
@@ -220,7 +204,7 @@
     "name": "Megumin",
     "anime": "KonoSuba",
     "category": "Isekai & Comedia",
-    "image": "https://cdn.myanimelist.net/images/characters/13/299602.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89361-tq8PQQ4MmF0M.png",
     "hint": "Pista: Maga carmesí con sombrero de bruja que solo sabe un hechizo de explosión y luego cae rendida."
   },
   {
@@ -228,7 +212,7 @@
     "name": "Madara Uchiha",
     "anime": "Naruto Shippuden",
     "category": "Villanos Legendarios",
-    "image": "https://cdn.myanimelist.net/images/characters/3/178873.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b53901-HnRKSoHMG5Vg.png",
     "hint": "Pista: Legendario fundador ninja que bajó dos meteoritos del cielo durante la guerra."
   },
   {
@@ -236,15 +220,31 @@
     "name": "Sosuke Aizen",
     "anime": "Bleach",
     "category": "Villanos Legendarios",
-    "image": "https://cdn.myanimelist.net/images/characters/6/73733.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1086-qR9218BjZTC0.png",
     "hint": "Pista: Maestro de la manipulación que se quitó los lentes, se peinó hacia atrás y traicionó a la Sociedad de Almas."
+  },
+  {
+    "id": "sukuna",
+    "name": "Ryomen Sukuna",
+    "anime": "Jujutsu Kaisen",
+    "category": "Shonen Moderno",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b133701-rCQuDpHr3UZL.png",
+    "hint": "Pista: Rey de las maldiciones que posee cuatro brazos en su forma original y tatuajes negros."
+  },
+  {
+    "id": "tanjiro",
+    "name": "Tanjiro Kamado",
+    "anime": "Demon Slayer (Kimetsu no Yaiba)",
+    "category": "Shonen Moderno",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126071-BTNEc1nRIv68.png",
+    "hint": "Pista: Espadachín de gran olfato con aretes hanafuda y una caja en su espalda."
   },
   {
     "id": "dio",
     "name": "Dio Brando",
     "anime": "JoJo's Bizarre Adventure",
     "category": "Villanos Legendarios",
-    "image": "https://cdn.myanimelist.net/images/characters/11/206439.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b4004-w0OtWuvjhftG.png",
     "hint": "Pista: Vampiro rubio con pose dramática capaz de detener el tiempo gritando 'ZA WARUDO'."
   },
   {
@@ -252,7 +252,7 @@
     "name": "Lelouch Lamperouge",
     "anime": "Code Geass",
     "category": "Estrategia & Mecha",
-    "image": "https://cdn.myanimelist.net/images/characters/8/34209.jpg",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b417-gVLmIJu9phcK.png",
     "hint": "Pista: Príncipe desterrado y estratega que comanda a la Orden de los Caballeros Negros bajo el alias Zero."
   }
 ]
