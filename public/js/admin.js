@@ -132,7 +132,7 @@ function renderAdminState(state) {
   const prevImg = document.getElementById('host-preview-img');
   const prevName = document.getElementById('host-preview-name');
   const prevAnime = document.getElementById('host-preview-anime');
-  const prevHint = document.getElementById('host-preview-hint');
+  const prevCategory = document.getElementById('host-preview-category');
 
   if (state.secretCard && state.phase !== 'LOBBY') {
     if (prevImg) prevImg.src = state.secretCard.image || 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&q=80';
@@ -142,11 +142,11 @@ function renderAdminState(state) {
         ? '📺 Modo Serie: Carátula Oficial'
         : (state.secretCard.anime || 'Anime');
     }
-    if (prevHint) prevHint.textContent = `Categoría temática: ${state.secretCard.category}`;
+    if (prevCategory) prevCategory.textContent = `Categoría temática: ${state.secretCard.category}`;
   } else {
     if (prevName) prevName.textContent = 'Ninguna ronda activa';
     if (prevAnime) prevAnime.textContent = 'Presiona "Iniciar Partida" para sortear';
-    if (prevHint) prevHint.textContent = 'Categoría: -';
+    if (prevCategory) prevCategory.textContent = 'Categoría: -';
   }
 
   // Overlay checkbox sync
@@ -304,12 +304,12 @@ document.getElementById('form-custom-card').addEventListener('submit', (e) => {
   const name = document.getElementById('custom-name').value.trim();
   const anime = document.getElementById('custom-anime').value.trim();
   const image = document.getElementById('custom-image').value.trim();
-  const hint = document.getElementById('custom-hint').value.trim();
+  const category = (document.getElementById('custom-category')?.value || 'Personalizado').trim();
 
   fetch('/api/cards', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, anime, image, hint, category: 'Personalizado' })
+    body: JSON.stringify({ name, anime, image, category })
   })
   .then(res => res.json())
   .then(data => {

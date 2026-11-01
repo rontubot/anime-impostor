@@ -73,7 +73,7 @@
               <span class="badge-cyber badge-red text-[9px] mb-1">Palabra Secreta en Juego</span>
               <h3 id="host-preview-name" class="font-cyber font-bold text-white text-base truncate">No iniciada</h3>
               <p id="host-preview-anime" class="text-xs text-slate-300 truncate">Presiona "Iniciar Partida" para sortear un personaje</p>
-              <p id="host-preview-hint" class="text-[11px] text-pink-300 mt-1 font-semibold">Categoría: -</p>
+              <p id="host-preview-category" class="text-[11px] text-pink-300 mt-1 font-semibold">Categoría: -</p>
             </div>
           </div>
 
@@ -251,7 +251,7 @@
             <input id="custom-name" type="text" placeholder="Nombre (ej. Zoro Roronoa)" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-slate-200">
             <input id="custom-anime" type="text" placeholder="Anime (ej. One Piece)" required class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-slate-200">
             <input id="custom-image" type="url" placeholder="URL de la imagen (JPG/PNG)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-slate-200">
-            <textarea id="custom-hint" rows="2" placeholder="Pista para el impostor (ej. Espadachín de pelo verde...)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-slate-200"></textarea>
+            <input id="custom-category" type="text" placeholder="Categoría (1 a 3 palabras, ej. Espadachín / Piratas)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-slate-200">
             
             <button type="submit" class="btn-cyber btn-cyan w-full py-2 text-xs">
               <i data-lucide="plus" class="w-3.5 h-3.5"></i> Agregar al Mazo
@@ -294,7 +294,7 @@
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/admin.js?v=3.1"></script>
+  <script src="/js/admin.js?v=5.0"></script>
   <script>
     lucide.createIcons();
   </script>

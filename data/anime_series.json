@@ -397,5 +397,649 @@
     "type": "ANIME",
     "category": "Fantasía de Monstruos",
     "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101280-tDxCVJm714nt.jpg"
+  },
+  {
+    "id": "series_ghost_in_the_shell",
+    "name": "Ghost in the Shell",
+    "type": "ANIME",
+    "category": "Cyborgs y Hackeo",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx43-Y6EjeEMM14dj.png"
+  },
+  {
+    "id": "series_perfect_blue",
+    "name": "Perfect Blue",
+    "type": "ANIME",
+    "category": "Terror Psicológico",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx437-69NMlXKFeuse.jpg"
+  },
+  {
+    "id": "series_serial_experiments_lain",
+    "name": "Serial Experiments Lain",
+    "type": "ANIME",
+    "category": "Ciberespacio Filosófico",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx339-xF2wp1NQuQ4r.png"
+  },
+  {
+    "id": "series_elfen_lied",
+    "name": "Elfen Lied",
+    "type": "ANIME",
+    "category": "Gore y Mutantes",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx226-MibyRKhIrnTe.png"
+  },
+  {
+    "id": "series_flcl_fooly_cooly",
+    "name": "FLCL (Fooly Cooly)",
+    "type": "ANIME",
+    "category": "Locura Surrealista",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx227-qOB9ZhVvNnqO.jpg"
+  },
+  {
+    "id": "series_ergo_proxy",
+    "name": "Ergo Proxy",
+    "type": "ANIME",
+    "category": "Distopía Cyberpunk",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx790-YTUCvBKX8ZWK.jpg"
+  },
+  {
+    "id": "series_texhnolyze",
+    "name": "Texhnolyze",
+    "type": "ANIME",
+    "category": "Cyberpunk Nihilista",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx26-ADSztyHBNO39.jpg"
+  },
+  {
+    "id": "series_shinsekai_yori",
+    "name": "Shinsekai Yori",
+    "type": "ANIME",
+    "category": "Distopía Telequinética",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13125-2EDZb8ahshQc.png"
+  },
+  {
+    "id": "series_mushishi",
+    "name": "Mushishi",
+    "type": "ANIME",
+    "category": "Espíritus y Naturaleza",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx457-l6cTtNgI9Bi6.png"
+  },
+  {
+    "id": "series_mononoke",
+    "name": "Mononoke",
+    "type": "ANIME",
+    "category": "Fantasmas Tradicionales",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2246-WHkSkgyuxfgD.jpg"
+  },
+  {
+    "id": "series_baccano",
+    "name": "Baccano!",
+    "type": "ANIME",
+    "category": "Mafia e Inmortalidad",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2251-tTQoWxVy4472.jpg"
+  },
+  {
+    "id": "series_durarara",
+    "name": "Durarara!!",
+    "type": "ANIME",
+    "category": "Bandas Urbanas",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6746-3LTwM95Uqeoa.png"
+  },
+  {
+    "id": "series_black_lagoon",
+    "name": "Black Lagoon",
+    "type": "ANIME",
+    "category": "Mercenarios y Armas",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx889-4S7N2ciq2cwA.png"
+  },
+  {
+    "id": "series_darker_than_black",
+    "name": "Darker than Black",
+    "type": "ANIME",
+    "category": "Contratistas Asesinos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b2025-ZKVteVzUyFLH.png"
+  },
+  {
+    "id": "series_claymore",
+    "name": "Claymore",
+    "type": "ANIME",
+    "category": "Guerreras Medievales",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1818-KieLJv0qo3mO.jpg"
+  },
+  {
+    "id": "series_d_gray_man",
+    "name": "D.Gray-man",
+    "type": "ANIME",
+    "category": "Exorcistas y Akumas",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1482-6jc8ZVSmHuLo.jpg"
+  },
+  {
+    "id": "series_los_caballeros_del_zodiaco",
+    "name": "Los Caballeros del Zodiaco",
+    "type": "ANIME",
+    "category": "Armaduras y Cosmos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/1254.jpg"
+  },
+  {
+    "id": "series_rurouni_kenshin_samurai_x",
+    "name": "Rurouni Kenshin (Samurai X)",
+    "type": "ANIME",
+    "category": "Samuráis Históricos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx45-DEFgZRCxiGmF.png"
+  },
+  {
+    "id": "series_slam_dunk",
+    "name": "Slam Dunk",
+    "type": "ANIME",
+    "category": "Básquetbol Clásico",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx170-cmD8A0vZsp6g.jpg"
+  },
+  {
+    "id": "series_hajime_no_ippo",
+    "name": "Hajime no Ippo",
+    "type": "ANIME",
+    "category": "Boxeo Épico",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx19647-cIy7ShTL6e9h.jpg"
+  },
+  {
+    "id": "series_ashita_no_joe",
+    "name": "Ashita no Joe",
+    "type": "ANIME",
+    "category": "Boxeo Dramático",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx2402-hbo1SbfcM5hm.jpg"
+  },
+  {
+    "id": "series_great_teacher_onizuka_gto",
+    "name": "Great Teacher Onizuka (GTO)",
+    "type": "ANIME",
+    "category": "Profesor Rebelde",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx245-NcQAyTipUMeO.jpg"
+  },
+  {
+    "id": "series_initial_d",
+    "name": "Initial D",
+    "type": "ANIME",
+    "category": "Drifting y Carreras",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b185-GvXiR8AKTmdn.jpg"
+  },
+  {
+    "id": "series_kuroko_no_basket",
+    "name": "Kuroko no Basket",
+    "type": "ANIME",
+    "category": "Básquet Fantasioso",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11771-uvr44RAwRxPw.jpg"
+  },
+  {
+    "id": "series_ping_pong_the_animation",
+    "name": "Ping Pong the Animation",
+    "type": "ANIME",
+    "category": "Tenis de Mesa",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20607-fIOxVISIl0HY.jpg"
+  },
+  {
+    "id": "series_march_comes_in_like_a_lion",
+    "name": "March Comes in Like a Lion",
+    "type": "ANIME",
+    "category": "Shogi y Superación",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21366-0wrYK0kjKeFn.jpg"
+  },
+  {
+    "id": "series_your_lie_in_april",
+    "name": "Your Lie in April",
+    "type": "ANIME",
+    "category": "Música y Melodrama",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-TLgkL8T8IRFd.png"
+  },
+  {
+    "id": "series_clannad",
+    "name": "Clannad",
+    "type": "ANIME",
+    "category": "Drama Escolar",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2167-pSDBcyc0vjej.jpg"
+  },
+  {
+    "id": "series_clannad_after_story",
+    "name": "Clannad: After Story",
+    "type": "ANIME",
+    "category": "Familia y Pérdida",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4181-zUKE7BZC62OF.png"
+  },
+  {
+    "id": "series_toradora",
+    "name": "Toradora!",
+    "type": "ANIME",
+    "category": "Romance Tsundere",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4224-PXVMBLNwy2aF.jpg"
+  },
+  {
+    "id": "series_anohana",
+    "name": "Anohana",
+    "type": "ANIME",
+    "category": "Amigos y Duelo",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9989-hImMg6kCMm6I.jpg"
+  },
+  {
+    "id": "series_angel_beats",
+    "name": "Angel Beats!",
+    "type": "ANIME",
+    "category": "Purgatorio Escolar",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6547-SYexAn5aFyss.png"
+  },
+  {
+    "id": "series_suzumiya_haruhi_no_yuuutsu",
+    "name": "Suzumiya Haruhi no Yuuutsu",
+    "type": "ANIME",
+    "category": "Misterios Escolares",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx849-wQM3GqLvl62P.png"
+  },
+  {
+    "id": "series_lucky_star",
+    "name": "Lucky Star",
+    "type": "ANIME",
+    "category": "Comedia Otaku",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1887-P36Pucd4qKji.png"
+  },
+  {
+    "id": "series_nichijou",
+    "name": "Nichijou",
+    "type": "ANIME",
+    "category": "Comedia Absurda",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10165-tw8Cz7K9tfVJ.png"
+  },
+  {
+    "id": "series_k_on",
+    "name": "K-On!",
+    "type": "ANIME",
+    "category": "Club de Música",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5680-r3AI3Cwfv0Aq.png"
+  },
+  {
+    "id": "series_azumanga_daioh",
+    "name": "Azumanga Daioh",
+    "type": "ANIME",
+    "category": "Comedia Nostálgica",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx66-ZqYQWl6LsfeI.png"
+  },
+  {
+    "id": "series_danshi_koukousei_no_nichijou",
+    "name": "Danshi Koukousei no Nichijou",
+    "type": "ANIME",
+    "category": "Chicos de Secundaria",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11843-ui2jBcuQUqnl.jpg"
+  },
+  {
+    "id": "series_grand_blue",
+    "name": "Grand Blue",
+    "type": "ANIME",
+    "category": "Buceo y Fiesta",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100922-uxEhaCsqMMp3.png"
+  },
+  {
+    "id": "series_asobi_asobase",
+    "name": "Asobi Asobase",
+    "type": "ANIME",
+    "category": "Juegos Caóticos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101001-UERCW0UGi0P7.jpg"
+  },
+  {
+    "id": "series_saiki_kusuo_no_psi_nan",
+    "name": "Saiki Kusuo no Psi-nan",
+    "type": "ANIME",
+    "category": "Poderes Psíquicos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/19469.jpg"
+  },
+  {
+    "id": "series_bakemonogatari",
+    "name": "Bakemonogatari",
+    "type": "ANIME",
+    "category": "Excentricidades Urbanas",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081-9GocceQ5Z865.jpg"
+  },
+  {
+    "id": "series_madoka_magica",
+    "name": "Madoka Magica",
+    "type": "ANIME",
+    "category": "Brujas y Desesperación",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9756-QnUGwlwwnsuN.jpg"
+  },
+  {
+    "id": "series_fate_stay_night_ubw",
+    "name": "Fate/stay night: UBW",
+    "type": "ANIME",
+    "category": "Guerra del Grial",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6922-g3hsIYOWGXL8.jpg"
+  },
+  {
+    "id": "series_kara_no_kyoukai",
+    "name": "Kara no Kyoukai",
+    "type": "ANIME",
+    "category": "Ojos Místicos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6954-uMdvQ3Vy74Oa.png"
+  },
+  {
+    "id": "series_land_of_the_lustrous",
+    "name": "Land of the Lustrous",
+    "type": "ANIME",
+    "category": "Gemas Inmortales",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98707-25nUKb4XUFgY.png"
+  },
+  {
+    "id": "series_devilman_crybaby",
+    "name": "Devilman Crybaby",
+    "type": "ANIME",
+    "category": "Demonios y Apocalipsis",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98460-bLtH2c3jd6sV.png"
+  },
+  {
+    "id": "series_dororo",
+    "name": "Dororo",
+    "type": "ANIME",
+    "category": "Demonios Feudales",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101347-TGaDwEYqLfm1.jpg"
+  },
+  {
+    "id": "series_dorohedoro",
+    "name": "Dorohedoro",
+    "type": "ANIME",
+    "category": "Magos y Caos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105228-I4xr84QS9Pvk.jpg"
+  },
+  {
+    "id": "series_golden_kamuy",
+    "name": "Golden Kamuy",
+    "type": "ANIME",
+    "category": "Oro y Supervivencia",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99699-mBCjpoWpAVGX.jpg"
+  },
+  {
+    "id": "series_kingdom",
+    "name": "Kingdom",
+    "type": "ANIME",
+    "category": "Guerra en China",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12031-1nVQa5nXPt48.png"
+  },
+  {
+    "id": "series_banana_fish",
+    "name": "Banana Fish",
+    "type": "ANIME",
+    "category": "Crimen y Mafias",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100388-hjkg1AnlJR5z.jpg"
+  },
+  {
+    "id": "series_terror_in_resonance",
+    "name": "Terror in Resonance",
+    "type": "ANIME",
+    "category": "Terrorismo Juvenil",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20661-aCR7QgzDfOSI.png"
+  },
+  {
+    "id": "series_91_days",
+    "name": "91 Days",
+    "type": "ANIME",
+    "category": "Venganza Mafiosa",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21711-EQN4sCIXRhKf.png"
+  },
+  {
+    "id": "series_summer_time_rendering",
+    "name": "Summer Time Rendering",
+    "type": "ANIME",
+    "category": "Bucle Temporal",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx129201-HJBauga2be8I.png"
+  },
+  {
+    "id": "series_heavenly_delusion",
+    "name": "Heavenly Delusion",
+    "type": "ANIME",
+    "category": "Apocalipsis y Monstruos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx155783-YosKbsmZzuDE.jpg"
+  },
+  {
+    "id": "series_pluto",
+    "name": "Pluto",
+    "type": "ANIME",
+    "category": "Robots y Asesinatos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99088-LTJskMD1wbbQ.png"
+  },
+  {
+    "id": "series_the_promised_neverland",
+    "name": "The Promised Neverland",
+    "type": "ANIME",
+    "category": "Orfanato Siniestro",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101759-8UR7r9MNVpz2.jpg"
+  },
+  {
+    "id": "series_noragami",
+    "name": "Noragami",
+    "type": "ANIME",
+    "category": "Dios Callejero",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20447-EoQXeygHaVCK.jpg"
+  },
+  {
+    "id": "series_fire_force",
+    "name": "Fire Force",
+    "type": "ANIME",
+    "category": "Bomberos Místicos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105310-2PKUvoaA6fTn.jpg"
+  },
+  {
+    "id": "series_fairy_tail",
+    "name": "Fairy Tail",
+    "type": "ANIME",
+    "category": "Gremio de Magos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png"
+  },
+  {
+    "id": "series_the_seven_deadly_sins",
+    "name": "The Seven Deadly Sins",
+    "type": "ANIME",
+    "category": "Pecados Capitales",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154197-yJZMgNynqQtW.jpg"
+  },
+  {
+    "id": "series_tokyo_revengers",
+    "name": "Tokyo Revengers",
+    "type": "ANIME",
+    "category": "Pandillas y Viajes",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120120-cWDmnmeEntSe.jpg"
+  },
+  {
+    "id": "series_hell_s_paradise",
+    "name": "Hell's Paradise",
+    "type": "ANIME",
+    "category": "Isla de Inmortales",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128893-Gc2t8b8M0mVu.jpg"
+  },
+  {
+    "id": "series_mashle_magic_and_muscles",
+    "name": "Mashle: Magic and Muscles",
+    "type": "ANIME",
+    "category": "Músculos y Varitas",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151801-XxVf22Le6C8o.png"
+  },
+  {
+    "id": "series_kaiju_no_8",
+    "name": "Kaiju No. 8",
+    "type": "ANIME",
+    "category": "Defensa contra Monstruos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153288-25FBfFJzEQ5O.jpg"
+  },
+  {
+    "id": "series_wind_breaker",
+    "name": "Wind Breaker",
+    "type": "ANIME",
+    "category": "Delincuentes Heroicos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx163270-wboZJp0ybwVK.jpg"
+  },
+  {
+    "id": "series_solo_leveling",
+    "name": "Solo Leveling",
+    "type": "ANIME",
+    "category": "Cazadores y Mazmorras",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151807-it355ZgzquUd.png"
+  },
+  {
+    "id": "series_overlord",
+    "name": "Overlord",
+    "type": "ANIME",
+    "category": "Rey No-Muerto",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20832-vUNm5zrYWifc.jpg"
+  },
+  {
+    "id": "series_no_game_no_life",
+    "name": "No Game No Life",
+    "type": "ANIME",
+    "category": "Mundo de Juegos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b19815-sEOQ9yQaPKlk.jpg"
+  },
+  {
+    "id": "series_the_rising_of_the_shield_hero",
+    "name": "The Rising of the Shield Hero",
+    "type": "ANIME",
+    "category": "Héroe del Escudo",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99263-LcazQwdlWzMy.jpg"
+  },
+  {
+    "id": "series_danmachi",
+    "name": "DanMachi",
+    "type": "ANIME",
+    "category": "Calabozos y Diosas",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20920-MTREwZOG4BAD.jpg"
+  },
+  {
+    "id": "series_sword_art_online",
+    "name": "Sword Art Online",
+    "type": "ANIME",
+    "category": "VRMMO Mortal",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757-SxYDUzdr9rh2.jpg"
+  },
+  {
+    "id": "series_log_horizon",
+    "name": "Log Horizon",
+    "type": "ANIME",
+    "category": "Estrategia MMORPG",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx17265-RyErURYesjJt.jpg"
+  },
+  {
+    "id": "series_classroom_of_the_elite",
+    "name": "Classroom of the Elite",
+    "type": "ANIME",
+    "category": "Manipulación Escolar",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98659-WNyPLIZDpGGY.jpg"
+  },
+  {
+    "id": "series_oregairu_snafu",
+    "name": "Oregairu (SNAFU)",
+    "type": "ANIME",
+    "category": "Cinismo Escolar",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14813-3mNvcKNEQcDs.jpg"
+  },
+  {
+    "id": "series_bunny_girl_senpai",
+    "name": "Bunny Girl Senpai",
+    "type": "ANIME",
+    "category": "Síndrome de Pubertad",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171046-9leqLiNuOqNu.png"
+  },
+  {
+    "id": "series_the_quintessential_quintuplets",
+    "name": "The Quintessential Quintuplets",
+    "type": "ANIME",
+    "category": "Harem Quintillizas",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103572-cchriAdH95cQ.png"
+  },
+  {
+    "id": "series_horimiya",
+    "name": "Horimiya",
+    "type": "ANIME",
+    "category": "Romance Cotidiano",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-3i22mRVPBS0T.jpg"
+  },
+  {
+    "id": "series_komi_can_t_communicate",
+    "name": "Komi Can't Communicate",
+    "type": "ANIME",
+    "category": "Ansiedad Social",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx133965-9TZBS4m4yvED.png"
+  },
+  {
+    "id": "series_fruits_basket",
+    "name": "Fruits Basket",
+    "type": "ANIME",
+    "category": "Zodíaco Chino",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105334-AZwEdMu4KFtV.jpg"
+  },
+  {
+    "id": "series_ouran_high_school_host_club",
+    "name": "Ouran High School Host Club",
+    "type": "ANIME",
+    "category": "Club de Anfitriones",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx853-fiUtW8yohsSF.jpg"
+  },
+  {
+    "id": "series_kamisama_kiss",
+    "name": "Kamisama Kiss",
+    "type": "ANIME",
+    "category": "Deidad y Zorros",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx14713-RyZ7bA7CdvGw.jpg"
+  },
+  {
+    "id": "series_wotakoi",
+    "name": "Wotakoi",
+    "type": "ANIME",
+    "category": "Romance Entre Otakus",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx99578-oO5KChtfhzln.png"
+  },
+  {
+    "id": "series_to_your_eternity",
+    "name": "To Your Eternity",
+    "type": "ANIME",
+    "category": "Inmortalidad y Emociones",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114535-y3NnjexcqKG1.jpg"
+  },
+  {
+    "id": "series_sonny_boy",
+    "name": "Sonny Boy",
+    "type": "ANIME",
+    "category": "Deriva Existencial",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132126-4ugVjXMQLAps.png"
+  },
+  {
+    "id": "series_odd_taxi",
+    "name": "Odd Taxi",
+    "type": "ANIME",
+    "category": "Misterio en Taxi",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128547-nNekWTKqmvEi.jpg"
+  },
+  {
+    "id": "series_vivy_fluorite_eye_s_song",
+    "name": "Vivy: Fluorite Eye's Song",
+    "type": "ANIME",
+    "category": "IA y Viaje Temporal",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128546-UIwyhuhjxmL0.jpg"
+  },
+  {
+    "id": "series_86_eighty_six",
+    "name": "86: Eighty Six",
+    "type": "ANIME",
+    "category": "Guerra de Drones",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116589-KawXHB6sApFt.jpg"
+  },
+  {
+    "id": "series_gundam_iron_blooded_orphans",
+    "name": "Gundam: Iron-Blooded Orphans",
+    "type": "ANIME",
+    "category": "Mechas y Huérfanos",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114842-AMEG5qd5h6Fw.jpg"
+  },
+  {
+    "id": "series_gundam_the_witch_from_mercury",
+    "name": "Gundam: The Witch from Mercury",
+    "type": "ANIME",
+    "category": "Duelos Escolares Mecha",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139274-0NJTOKWHdDew.png"
+  },
+  {
+    "id": "series_space_dandy",
+    "name": "Space Dandy",
+    "type": "ANIME",
+    "category": "Cazador Cósmico",
+    "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20057-tG83EpH5Gu8K.jpg"
   }
 ]
