@@ -5,7 +5,7 @@
     "anime": "Dragon Ball Z",
     "category": "Shonen Clásico",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/246-wsRRr6z1kii8.png",
-    "hint": "Pista: Guerrero saiyajin de gran apetito que cambia el color de su cabello al volverse más fuerte."
+    "hint": "Pista: Su motivación no es la justicia, sino el deseo insaciable de desafiar límites y medirse contra rivales cada vez más temibles."
   },
   {
     "id": "vegeta",
@@ -13,7 +13,7 @@
     "anime": "Dragon Ball Z",
     "category": "Shonen Clásico",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b913-NIFkKazWM8VO.png",
-    "hint": "Pista: Príncipe orgulloso de frente amplia y eterno rival del protagonista."
+    "hint": "Pista: Carga el peso de un linaje extinto y una rivalidad constante que lo obliga a desafiar su propio ego."
   },
   {
     "id": "naruto",
@@ -21,7 +21,7 @@
     "anime": "Naruto Shippuden",
     "category": "Shonen Clásico",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b17-phjcWCkRuIhu.png",
-    "hint": "Pista: Ninja rubio hiperactivo que sueña con ser el líder de su aldea y adora el ramen."
+    "hint": "Pista: Comenzó marginado por una carga destructiva en su interior y transformó su entorno a base de empatía y terquedad."
   },
   {
     "id": "sasuke",
@@ -29,7 +29,7 @@
     "anime": "Naruto Shippuden",
     "category": "Shonen Clásico",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b13-SISLEw1oAD7a.png",
-    "hint": "Pista: Ninja vengador de ojos rojos/morados con técnicas de rayo y fuego."
+    "hint": "Pista: Consumido por el trauma de su sangre, eligió la soledad y la oscuridad convencido de que era el único camino hacia su verdad."
   },
   {
     "id": "luffy",
@@ -37,7 +37,7 @@
     "anime": "One Piece",
     "category": "Shonen Clásico",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40-MNypXsxSRb1R.png",
-    "hint": "Pista: Pirata con sombrero de paja cuyo cuerpo se estira como la goma."
+    "hint": "Pista: Valora la libertad absoluta por encima de cualquier riqueza material o título formal."
   },
   {
     "id": "zoro",
@@ -45,7 +45,7 @@
     "anime": "One Piece",
     "category": "Shonen Clásico",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b62-S7oAeA9WInjV.png",
-    "hint": "Pista: Espadachín de cabello verde que suele perderse en cualquier lugar y usa tres espadas."
+    "hint": "Pista: Disciplina estricta y devoción silenciosa a una promesa de infancia, donde el dolor físico jamás es excusa para rendirse."
   },
   {
     "id": "gojo",
@@ -53,175 +53,7 @@
     "anime": "Jujutsu Kaisen",
     "category": "Shonen Moderno",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127691-9zqh1xpIubn7.png",
-    "hint": "Pista: Hechicero con ojos celestes ocultos bajo una venda/lentes y considerado el más fuerte."
-  },
-  {
-    "id": "eren",
-    "name": "Eren Jaeger",
-    "anime": "Attack on Titan",
-    "category": "Shonen Moderno",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40882-dsj7IP943WFF.jpg",
-    "hint": "Pista: Obsesionado con la libertad, puede transformarse en un titán al morderse la mano."
-  },
-  {
-    "id": "levi",
-    "name": "Levi Ackerman",
-    "anime": "Attack on Titan",
-    "category": "Shonen Moderno",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
-    "hint": "Pista: Capitán de baja estatura, obsesivo con la limpieza y letal con el equipo de maniobras tridimensionales."
-  },
-  {
-    "id": "nezuko",
-    "name": "Nezuko Kamado",
-    "anime": "Demon Slayer",
-    "category": "Shonen Moderno",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127518-NRlq1CQ1v1ro.png",
-    "hint": "Pista: Demonio que duerme para recuperar energía y lleva un bozal de bambú en la boca."
-  },
-  {
-    "id": "deku",
-    "name": "Izuku Midoriya (Deku)",
-    "anime": "My Hero Academia",
-    "category": "Shonen Moderno",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89028-8w1I9o1ISHMg.png",
-    "hint": "Pista: Héroe peliverde que solía romperse los huesos usando el poder heredado de All Might."
-  },
-  {
-    "id": "bakugo",
-    "name": "Katsuki Bakugo",
-    "anime": "My Hero Academia",
-    "category": "Shonen Moderno",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88892-bdOha3lNcaN6.png",
-    "hint": "Pista: Héroe explosivo con pésimo temperamento y sudor similar a la nitroglicerina."
-  },
-  {
-    "id": "saitama",
-    "name": "Saitama",
-    "anime": "One Punch Man",
-    "category": "Comedia & Acción",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b73935-ON5d0mAcrItd.jpg",
-    "hint": "Pista: Héroe calvo con traje amarillo y capa blanca que derrota a casi cualquiera de un solo golpe."
-  },
-  {
-    "id": "light",
-    "name": "Light Yagami",
-    "anime": "Death Note",
-    "category": "Suspenso & Psicológico",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b80-26EhwSsSqQ50.png",
-    "hint": "Pista: Estudiante brillante con complejo de Dios que escribe nombres en una libreta sobrenatural."
-  },
-  {
-    "id": "l",
-    "name": "L Lawliet",
-    "anime": "Death Note",
-    "category": "Suspenso & Psicológico",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b71-1W4panC53vfs.png",
-    "hint": "Pista: Detective excéntrico de ojeras pronunciadas que se sienta en cuclillas y ama los dulces."
-  },
-  {
-    "id": "killua",
-    "name": "Killua Zoldyck",
-    "anime": "Hunter x Hunter",
-    "category": "Shonen Clásico",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b27-Z5O02kQUydpT.jpg",
-    "hint": "Pista: Chico de cabello blanco perteneciente a una familia de asesinos élite que domina la electricidad."
-  },
-  {
-    "id": "edward",
-    "name": "Edward Elric",
-    "anime": "Fullmetal Alchemist",
-    "category": "Shonen Clásico",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b11-TA5Nuk7EDUZG.jpg",
-    "hint": "Pista: Alquimista estatal con brazo y pierna de metal al que le enfurece que le digan enano."
-  },
-  {
-    "id": "ichigo",
-    "name": "Ichigo Kurosaki",
-    "anime": "Bleach",
-    "category": "Shonen Clásico",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5-a7bkJgjhhigE.png",
-    "hint": "Pista: Shinigami sustituto de cabello naranja natural que porta una gigantesca espada llamada Zangetsu."
-  },
-  {
-    "id": "anya",
-    "name": "Anya Forger",
-    "anime": "Spy x Family",
-    "category": "Popular & Comedia",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b138100-4Li0tWRCa5bQ.png",
-    "hint": "Pista: Niña pequeña de cabello rosa y expresiones graciosas que puede leer las mentes de la gente."
-  },
-  {
-    "id": "frieren",
-    "name": "Frieren",
-    "anime": "Sousou no Frieren",
-    "category": "Fantasía",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b176754-PCnpqIOkjhFk.png",
-    "hint": "Pista: Elfa maga milenaria de dos coletas que colecciona hechizos extraños tras la muerte del héroe."
-  },
-  {
-    "id": "makima",
-    "name": "Makima",
-    "anime": "Chainsaw Man",
-    "category": "Seinen & Suspenso",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b137080-UHcynYNjb5ZU.png",
-    "hint": "Pista: Líder de cazadores de demonios con cabello rojizo, trenza y ojos misteriosos con círculos amarillos."
-  },
-  {
-    "id": "denji",
-    "name": "Denji",
-    "anime": "Chainsaw Man",
-    "category": "Shonen Moderno",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b130102-FO1VHNnEnLlB.png",
-    "hint": "Pista: Joven con motosierras saliendo de sus brazos y cabeza cuyo único deseo es tener una vida normal."
-  },
-  {
-    "id": "marin",
-    "name": "Marin Kitagawa",
-    "anime": "My Dress-Up Darling",
-    "category": "Romance & Slice of Life",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b133676-kV2czE3C8Qls.png",
-    "hint": "Pista: Chica alegre y extrovertida de secundaria aficionada al cosplay y a los eroges."
-  },
-  {
-    "id": "rem",
-    "name": "Rem",
-    "anime": "Re:Zero",
-    "category": "Isekai",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88575-Ayu8UPDA8NS6.png",
-    "hint": "Pista: Sirvienta oni de cabello azul corto que usa un lucero del alba con cadena."
-  },
-  {
-    "id": "rimuru",
-    "name": "Rimuru Tempest",
-    "anime": "That Time I Got Reincarnated as a Slime",
-    "category": "Isekai",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123962-eL9yGV0NLMF7.png",
-    "hint": "Pista: Un slime azul con apariencia humana andrógina que lidera una federación de monstruos."
-  },
-  {
-    "id": "megumin",
-    "name": "Megumin",
-    "anime": "KonoSuba",
-    "category": "Isekai & Comedia",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89361-tq8PQQ4MmF0M.png",
-    "hint": "Pista: Maga carmesí con sombrero de bruja que solo sabe un hechizo de explosión y luego cae rendida."
-  },
-  {
-    "id": "madara",
-    "name": "Madara Uchiha",
-    "anime": "Naruto Shippuden",
-    "category": "Villanos Legendarios",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b53901-HnRKSoHMG5Vg.png",
-    "hint": "Pista: Legendario fundador ninja que bajó dos meteoritos del cielo durante la guerra."
-  },
-  {
-    "id": "aizen",
-    "name": "Sosuke Aizen",
-    "anime": "Bleach",
-    "category": "Villanos Legendarios",
-    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1086-qR9218BjZTC0.png",
-    "hint": "Pista: Maestro de la manipulación que se quitó los lentes, se peinó hacia atrás y traicionó a la Sociedad de Almas."
+    "hint": "Pista: La cúspide del poder absoluto engendra una soledad existencial que nadie más a su alrededor puede comprender."
   },
   {
     "id": "sukuna",
@@ -229,7 +61,23 @@
     "anime": "Jujutsu Kaisen",
     "category": "Shonen Moderno",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b133701-rCQuDpHr3UZL.png",
-    "hint": "Pista: Rey de las maldiciones que posee cuatro brazos en su forma original y tatuajes negros."
+    "hint": "Pista: Entidad que rige su existencia únicamente por el hedonismo y la ley del más fuerte, sin empatía ni causa noble."
+  },
+  {
+    "id": "eren",
+    "name": "Eren Jaeger",
+    "anime": "Attack on Titan",
+    "category": "Shonen Moderno",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b40882-dsj7IP943WFF.jpg",
+    "hint": "Pista: La obsesión ciega por derribar las cadenas lo lleva a convertirse en la misma amenaza que juró exterminar."
+  },
+  {
+    "id": "levi",
+    "name": "Levi Ackerman",
+    "anime": "Attack on Titan",
+    "category": "Shonen Moderno",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b45627-CR68RyZmddGG.png",
+    "hint": "Pista: El arma definitiva de su causa, condenado a sobrevivir a todos sus camaradas y cargar con el peso de sus elecciones."
   },
   {
     "id": "tanjiro",
@@ -237,7 +85,159 @@
     "anime": "Demon Slayer (Kimetsu no Yaiba)",
     "category": "Shonen Moderno",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b126071-BTNEc1nRIv68.png",
-    "hint": "Pista: Espadachín de gran olfato con aretes hanafuda y una caja en su espalda."
+    "hint": "Pista: Guiado por la compasión hacia sus enemigos, busca restaurar la humanidad perdida en su propio núcleo familiar."
+  },
+  {
+    "id": "nezuko",
+    "name": "Nezuko Kamado",
+    "anime": "Demon Slayer (Kimetsu no Yaiba)",
+    "category": "Shonen Moderno",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b127518-NRlq1CQ1v1ro.png",
+    "hint": "Pista: Dividida entre dos naturalezas antagónicas, su voluntad protectora desafía los instintos primarios de su condición."
+  },
+  {
+    "id": "deku",
+    "name": "Izuku Midoriya (Deku)",
+    "anime": "My Hero Academia",
+    "category": "Shonen Moderno",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89028-8w1I9o1ISHMg.png",
+    "hint": "Pista: La convicción de salvar a otros llevada al límite autodestructivo de romper el propio cuerpo por altruismo."
+  },
+  {
+    "id": "bakugo",
+    "name": "Katsuki Bakugo",
+    "anime": "My Hero Academia",
+    "category": "Shonen Moderno",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88892-bdOha3lNcaN6.png",
+    "hint": "Pista: Un complejo de inferioridad latente disfrazado de orgullo violento para ocultar el pánico a ser superado."
+  },
+  {
+    "id": "saitama",
+    "name": "Saitama",
+    "anime": "One Punch Man",
+    "category": "Comedia & Acción",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b73935-ON5d0mAcrItd.jpg",
+    "hint": "Pista: Alcanzó la meta definitiva de forma tan contundente que ahora sufre una crisis existencial por la ausencia de retos."
+  },
+  {
+    "id": "light",
+    "name": "Light Yagami",
+    "anime": "Death Note",
+    "category": "Suspenso & Psicológico",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b80-26EhwSsSqQ50.png",
+    "hint": "Pista: Un intelecto deslumbrante corrompido por la convicción dogmática de que la depuración del mundo justifica cualquier medio."
+  },
+  {
+    "id": "l",
+    "name": "L Lawliet",
+    "anime": "Death Note",
+    "category": "Suspenso & Psicológico",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b71-1W4panC53vfs.png",
+    "hint": "Pista: Mente analítica que trata los dilemas de la moral y la justicia como un tablero de deducción puramente probabilístico."
+  },
+  {
+    "id": "killua",
+    "name": "Killua Zoldyck",
+    "anime": "Hunter x Hunter",
+    "category": "Shonen Clásico",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b27-Z5O02kQUydpT.jpg",
+    "hint": "Pista: Lucha por escapar de un condicionamiento despiadado para descubrir lo que significa tener un lazo genuino."
+  },
+  {
+    "id": "edward",
+    "name": "Edward Elric",
+    "anime": "Fullmetal Alchemist",
+    "category": "Shonen Clásico",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b11-TA5Nuk7EDUZG.jpg",
+    "hint": "Pista: El castigo por desafiar los límites naturales y el remordimiento de arrastrar a un ser querido a una pérdida irreparable."
+  },
+  {
+    "id": "ichigo",
+    "name": "Ichigo Kurosaki",
+    "anime": "Bleach",
+    "category": "Shonen Clásico",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b5-a7bkJgjhhigE.png",
+    "hint": "Pista: No persigue ideales mesiánicos ni conquistas, solo la fortaleza necesaria para preservar a quienes componen su refugio cercano."
+  },
+  {
+    "id": "anya",
+    "name": "Anya Forger",
+    "anime": "Spy x Family",
+    "category": "Popular & Comedia",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b138100-4Li0tWRCa5bQ.png",
+    "hint": "Pista: Conoce secretos ajenos sin desearlo y hace peripecias inocentes para sostener una fachada que considera su verdadero hogar."
+  },
+  {
+    "id": "frieren",
+    "name": "Frieren",
+    "anime": "Sousou no Frieren",
+    "category": "Fantasía",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b176754-PCnpqIOkjhFk.png",
+    "hint": "Pista: Comprender la fragilidad y el significado de los momentos compartidos cuando ya es demasiado tarde para revivirlos."
+  },
+  {
+    "id": "makima",
+    "name": "Makima",
+    "anime": "Chainsaw Man",
+    "category": "Seinen & Suspenso",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b137080-UHcynYNjb5ZU.png",
+    "hint": "Pista: Figura de autoridad que ejerce un dominio implacable sobre voluntades vulnerables bajo la promesa de afecto y propósito."
+  },
+  {
+    "id": "denji",
+    "name": "Denji",
+    "anime": "Chainsaw Man",
+    "category": "Shonen Moderno",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b130102-FO1VHNnEnLlB.png",
+    "hint": "Pista: Motivado por placeres cotidianos que para cualquiera serían insignificantes, tras haber crecido desprovisto de dignidad básica."
+  },
+  {
+    "id": "marin",
+    "name": "Marin Kitagawa",
+    "anime": "My Dress-Up Darling",
+    "category": "Romance & Slice of Life",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b133676-kV2czE3C8Qls.png",
+    "hint": "Pista: Vive sus intereses con entusiasmo desinhibido y derriba barreras para inspirar a alguien reservado a reconocer su propio talento."
+  },
+  {
+    "id": "rem",
+    "name": "Rem",
+    "anime": "Re:Zero",
+    "category": "Isekai",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b88575-Ayu8UPDA8NS6.png",
+    "hint": "Pista: Una devoción incondicional nacida del agradecimiento por haber sido redimida de su propio complejo de culpa e inutilidad."
+  },
+  {
+    "id": "rimuru",
+    "name": "Rimuru Tempest",
+    "anime": "That Time I Got Reincarnated as a Slime",
+    "category": "Isekai",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123962-eL9yGV0NLMF7.png",
+    "hint": "Pista: Construye alianzas diplomáticas entre comunidades marginadas bajo una presencia aparentemente inofensiva pero decisiva."
+  },
+  {
+    "id": "megumin",
+    "name": "Megumin",
+    "anime": "KonoSuba",
+    "category": "Isekai & Comedia",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b89361-tq8PQQ4MmF0M.png",
+    "hint": "Pista: Deposita todo su honor y terquedad en un único método grandilocuente, aun sabiendo que la deja completamente vulnerable tras usarlo."
+  },
+  {
+    "id": "madara",
+    "name": "Madara Uchiha",
+    "anime": "Naruto Shippuden",
+    "category": "Villanos Legendarios",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b53901-HnRKSoHMG5Vg.png",
+    "hint": "Pista: Llegó a la conclusión de que la verdadera armonía solo puede existir dentro de una ilusión colectiva donde nadie sufra pérdidas."
+  },
+  {
+    "id": "aizen",
+    "name": "Sosuke Aizen",
+    "anime": "Bleach",
+    "category": "Villanos Legendarios",
+    "image": "https://s4.anilist.co/file/anilistcdn/character/large/b1086-qR9218BjZTC0.png",
+    "hint": "Pista: Tejió pacientemente una fachada intachable durante décadas movido por la soberbia de no aceptar a nadie por encima de sí."
   },
   {
     "id": "dio",
@@ -245,7 +245,7 @@
     "anime": "JoJo's Bizarre Adventure",
     "category": "Villanos Legendarios",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b4004-w0OtWuvjhftG.png",
-    "hint": "Pista: Vampiro rubio con pose dramática capaz de detener el tiempo gritando 'ZA WARUDO'."
+    "hint": "Pista: El rencor hacia un origen miserable mutó en un complejo de superioridad mesiánico que busca subyugar a los demás como ganado."
   },
   {
     "id": "lelouch",
@@ -253,6 +253,6 @@
     "anime": "Code Geass",
     "category": "Estrategia & Mecha",
     "image": "https://s4.anilist.co/file/anilistcdn/character/large/b417-gVLmIJu9phcK.png",
-    "hint": "Pista: Príncipe desterrado y estratega que comanda a la Orden de los Caballeros Negros bajo el alias Zero."
+    "hint": "Pista: Asume el papel de villano universal ante el mundo con el fin de concentrar todo el rencor y permitir un renacimiento colectivo."
   }
 ]
