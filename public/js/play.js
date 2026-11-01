@@ -178,8 +178,6 @@ if (btnReveal) {
 
         document.getElementById('impostor-hint-text').textContent = response.hint || 'Sin pista adicional.';
         document.getElementById('impostor-category-tag').textContent = response.category || 'Anime General';
-
-        if (window.soundManager) window.soundManager.playImpostorAlert();
       } else {
         // INNOCENT CARD
         cardImpostor.classList.add('hidden');
@@ -199,8 +197,6 @@ if (btnReveal) {
             img.src = 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&q=80';
           };
         }
-
-        if (window.soundManager) window.soundManager.playCardReveal();
       }
 
       if (window.lucide) lucide.createIcons();
@@ -265,8 +261,6 @@ window.voteForPlayer = function(targetId) {
       msg.classList.add('hidden');
     }, 3000);
   }
-
-  if (window.soundManager) window.soundManager.playTick();
 };
 
 function renderResults(state) {

@@ -56,9 +56,6 @@ function updateTimerDisplay(seconds) {
   if (seconds <= 15 && seconds > 0) {
     timerBox.classList.add('border-red-500', 'shadow-lg', 'shadow-red-500/30');
     display.classList.add('text-red-400', 'animate-pulse');
-    if (seconds <= 5 && window.soundManager) {
-      window.soundManager.playTick();
-    }
   } else {
     timerBox.classList.remove('border-red-500', 'shadow-lg', 'shadow-red-500/30');
     display.classList.remove('text-red-400', 'animate-pulse');
@@ -101,13 +98,10 @@ function renderOverlay(state) {
   // Render Results Modal if RESULTS phase
   renderResultsModal(state);
 
-  // Check phase change sound cues
+  // Check phase change cues
   if (currentPhase !== state.phase) {
     if (state.phase === 'RESULTS') {
       triggerConfetti();
-      if (window.soundManager) window.soundManager.playImpostorAlert();
-    } else if (state.phase === 'DISCUSSION') {
-      if (window.soundManager) window.soundManager.playCardReveal();
     }
     currentPhase = state.phase;
   }
@@ -214,7 +208,7 @@ function renderResultsModal(state) {
     
     if (grid) {
       grid.innerHTML = impostors.map(imp => `
-        <div class="glass-panel-neon p-4 flex flex-col items-center gap-2 max-w-[180px] shake-impostor">
+        <div class="glass-panel-neon p-4 flex flex-col items-center gap-2 max-w-[180px]">
           <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-red-600 to-pink-600 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-red-500/50">
             <i data-lucide="skull" class="w-8 h-8"></i>
           </div>
