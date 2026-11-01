@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="/styles/style.css?v=5.0">
+  <link rel="stylesheet" href="/styles/style.css?v=6.0">
 </head>
 <body class="overlay-mode select-none font-sans">
   <div id="overlay-container" class="relative w-screen h-screen p-6 flex flex-col justify-between pointer-events-none">
@@ -98,64 +98,63 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- MODAL / POPUP: ACCUSATION RESULT BANNER (INOCENTE O IMPOSTOR) -->
-    <div id="accusation-popup" class="fixed inset-0 bg-black/75 backdrop-blur-sm hidden items-center justify-center z-50 pointer-events-auto">
-      <div id="accusation-box" class="glass-panel p-8 max-w-lg w-full mx-4 border-2 border-[#ff2a5f] text-center relative overflow-hidden slide-up-center">
-        <div id="acc-badge" class="badge-cyber badge-red text-xs px-4 py-1 mb-3 inline-flex">
-          ACUSACIÓN DE IMPOSTOR
-        </div>
+  <!-- MODAL / POPUP: ACCUSATION RESULT BANNER (INOCENTE O IMPOSTOR) -->
+  <div id="accusation-popup" class="fixed inset-0 bg-black/75 backdrop-blur-sm hidden items-center justify-center z-50 pointer-events-auto">
+    <div id="accusation-box" class="glass-panel p-8 max-w-lg w-full mx-auto border-2 border-[#ff2a5f] text-center relative overflow-hidden slide-up-center">
+      <div id="acc-badge" class="badge-cyber badge-red text-xs px-4 py-1 mb-3 inline-flex">
+        ACUSACIÓN DE IMPOSTOR
+      </div>
 
-        <h2 id="acc-target-name" class="font-cyber text-3xl font-black text-white mb-2 tracking-wide">
-          Jugador
-        </h2>
+      <h2 id="acc-target-name" class="font-cyber text-3xl font-black text-white mb-2 tracking-wide">
+        Jugador
+      </h2>
 
-        <div id="acc-verdict" class="text-lg font-bold my-4 py-2 px-4 rounded-xl">
-          ¿ERA O NO EL IMPOSTOR?
-        </div>
+      <div id="acc-verdict" class="text-lg font-bold my-4 py-2 px-4 rounded-xl">
+        ¿ERA O NO EL IMPOSTOR?
+      </div>
 
-        <p id="acc-detail" class="text-slate-300 text-sm mb-4">
-          Detalles de la ronda...
-        </p>
+      <p id="acc-detail" class="text-slate-300 text-sm mb-4">
+        Detalles de la ronda...
+      </p>
 
-        <div id="acc-next-starter" class="hidden bg-slate-900/90 border border-cyan-500/40 rounded-xl p-3 text-xs text-cyan-300">
-          🎤 Siguiente persona en empezar la ronda: <strong id="acc-next-starter-name" class="text-white">Nombre</strong>
+      <div id="acc-next-starter" class="hidden bg-slate-900/90 border border-cyan-500/40 rounded-xl p-3 text-xs text-cyan-300">
+        🎤 Siguiente persona en empezar la ronda: <strong id="acc-next-starter-name" class="text-white">Nombre</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: FINAL GAME OVER -->
+  <div id="gameover-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md hidden items-center justify-center z-50 pointer-events-auto">
+    <div class="glass-panel p-8 max-w-xl w-full mx-auto border-2 border-[#ff2a5f] text-center relative overflow-hidden slide-up-center">
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#ff2a5f]/30 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="badge-cyber badge-red text-xs px-4 py-1 mb-4 inline-flex">
+        ¡FIN DE LA PARTIDA!
+      </div>
+
+      <h2 id="gameover-title" class="font-cyber text-3xl md:text-4xl font-black text-white mb-2 tracking-wide">
+        ¡LOS INOCENTES GANAN!
+      </h2>
+
+      <p id="gameover-subtitle" class="text-slate-300 text-sm mb-6">
+        El impostor ha sido descubierto.
+      </p>
+
+      <!-- Secret Card Reference in Results -->
+      <div class="bg-slate-900/80 border border-slate-700/60 rounded-xl p-3 flex items-center justify-center gap-3 max-w-sm mx-auto">
+        <img id="gameover-secret-img" src="" class="w-10 h-10 rounded-lg object-cover border border-cyan-400">
+        <div class="text-left">
+          <span class="text-[10px] text-slate-400 uppercase font-bold">El anime secreto era</span>
+          <div id="gameover-secret-title" class="text-sm font-bold text-[#00f0ff]">Nombre - Anime</div>
         </div>
       </div>
     </div>
-
-    <!-- MODAL: FINAL GAME OVER -->
-    <div id="gameover-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md hidden items-center justify-center z-50 pointer-events-auto">
-      <div class="glass-panel p-8 max-w-xl w-full mx-4 border-2 border-[#ff2a5f] text-center relative overflow-hidden slide-up-center">
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#ff2a5f]/30 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="badge-cyber badge-red text-xs px-4 py-1 mb-4 inline-flex">
-          ¡FIN DE LA PARTIDA!
-        </div>
-
-        <h2 id="gameover-title" class="font-cyber text-3xl md:text-4xl font-black text-white mb-2 tracking-wide">
-          ¡LOS INOCENTES GANAN!
-        </h2>
-
-        <p id="gameover-subtitle" class="text-slate-300 text-sm mb-6">
-          El impostor ha sido descubierto.
-        </p>
-
-        <!-- Secret Card Reference in Results -->
-        <div class="bg-slate-900/80 border border-slate-700/60 rounded-xl p-3 flex items-center justify-center gap-3 max-w-sm mx-auto">
-          <img id="gameover-secret-img" src="" class="w-10 h-10 rounded-lg object-cover border border-cyan-400">
-          <div class="text-left">
-            <span class="text-[10px] text-slate-400 uppercase font-bold">El anime secreto era</span>
-            <div id="gameover-secret-title" class="text-sm font-bold text-[#00f0ff]">Nombre - Anime</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/overlay.js?v=5.0"></script>
+  <script src="/js/overlay.js?v=6.0"></script>
   <script>
     lucide.createIcons();
   </script>
