@@ -163,6 +163,16 @@ if (btnReveal) {
 
         const catTag = document.getElementById('impostor-category-tag');
         if (catTag) catTag.textContent = response.category || 'Anime';
+
+        const modeInd = document.getElementById('impostor-mode-indicator');
+        const subtext = document.getElementById('impostor-subtext');
+        if (response.cardType === 'ANIME') {
+          if (modeInd) modeInd.textContent = '📺 MODO EN JUEGO: SERIE DE ANIME';
+          if (subtext) subtext.textContent = 'No conoces el anime exacto que tienen los demás.';
+        } else {
+          if (modeInd) modeInd.textContent = '🎭 MODO EN JUEGO: PERSONAJE DE ANIME';
+          if (subtext) subtext.textContent = 'No conoces el personaje exacto que tienen los demás.';
+        }
       } else {
         cardImpostor.classList.add('hidden');
         cardImpostor.classList.remove('flex');
@@ -170,9 +180,35 @@ if (btnReveal) {
         cardInnocent.classList.add('flex');
 
         const card = response.card;
-        document.getElementById('innocent-char-name').textContent = card.name;
-        document.getElementById('innocent-anime-name').textContent = card.anime;
-        document.getElementById('innocent-cat-pill').textContent = card.category;
+        const nameEl = document.getElementById('innocent-char-name');
+        const animeEl = document.getElementById('innocent-anime-name');
+        const catPill = document.getElementById('innocent-cat-pill');
+        const modePill = document.getElementById('innocent-mode-pill');
+        const missionEl = document.getElementById('innocent-mission-desc');
+
+        if (card.type === 'ANIME') {
+          if (nameEl) nameEl.textContent = card.name;
+          if (animeEl) animeEl.textContent = 'Carátula Oficial';
+          if (modePill) {
+            modePill.textContent = '📺 MODO ANIME';
+            modePill.className = 'badge-cyber badge-purple text-[8px] px-2 py-0.5';
+          }
+          if (missionEl) {
+            missionEl.textContent = 'Convence a los demás de que conoces esta serie de anime dando pistas sutiles, ¡sin revelarla directamente al impostor!';
+          }
+        } else {
+          if (nameEl) nameEl.textContent = card.name;
+          if (animeEl) animeEl.textContent = card.anime;
+          if (modePill) {
+            modePill.textContent = '🎭 MODO PERSONAJE';
+            modePill.className = 'badge-cyber badge-cyan text-[8px] px-2 py-0.5';
+          }
+          if (missionEl) {
+            missionEl.textContent = 'Convence a los demás de que conoces este personaje dando pistas sutiles, ¡sin revelarlo directamente al impostor!';
+          }
+        }
+
+        if (catPill) catPill.textContent = card.category;
 
         const img = document.getElementById('innocent-char-img');
         if (img) {
@@ -361,7 +397,9 @@ function renderGameOver(state) {
 
   if (state.secretCard) {
     if (secretName) secretName.textContent = state.secretCard.name;
-    if (secretAnime) secretAnime.textContent = state.secretCard.anime;
+    if (secretAnime) {
+      secretAnime.textContent = state.secretCard.type === 'ANIME' ? 'Carátula Oficial de la Serie' : (state.secretCard.anime || 'Anime');
+    }
     if (secretImg) secretImg.src = state.secretCard.image || 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&q=80';
   }
 }

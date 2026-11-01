@@ -170,8 +170,32 @@ function renderSecretCard(state) {
         img.src = 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&q=80';
       };
     }
-    if (name) name.textContent = state.secretCard.name;
-    if (anime) anime.textContent = state.secretCard.anime;
+
+    const modeBadge = document.getElementById('secret-mode-badge');
+    const imgWrapper = document.getElementById('secret-img-wrapper');
+
+    if (state.secretCard.type === 'ANIME') {
+      if (modeBadge) {
+        modeBadge.textContent = '📺 MODO ANIME';
+        modeBadge.className = 'badge-cyber badge-purple text-[8px] px-2 py-0.5';
+      }
+      if (name) name.textContent = state.secretCard.name;
+      if (anime) anime.textContent = 'Carátula Oficial';
+      if (imgWrapper) {
+        imgWrapper.className = 'relative w-14 h-20 rounded-xl overflow-hidden border-2 border-purple-400 flex-shrink-0 shadow-md shadow-purple-500/30 bg-slate-900';
+      }
+    } else {
+      if (modeBadge) {
+        modeBadge.textContent = '🎭 MODO PERSONAJE';
+        modeBadge.className = 'badge-cyber badge-cyan text-[8px] px-2 py-0.5';
+      }
+      if (name) name.textContent = state.secretCard.name;
+      if (anime) anime.textContent = state.secretCard.anime;
+      if (imgWrapper) {
+        imgWrapper.className = 'relative w-16 h-16 rounded-xl overflow-hidden border-2 border-cyan-400 flex-shrink-0 shadow-md shadow-cyan-500/30 bg-slate-900';
+      }
+    }
+
     if (cat) cat.textContent = state.secretCard.category || 'Anime';
   } else {
     container.classList.add('hidden');

@@ -12,7 +12,7 @@ const io = new Server(server, {
 
 const PORT = process.env.PORT || 3000;
 
-// Load anime cards database
+// Load anime cards database (Characters)
 const CARDS_FILE = path.join(__dirname, 'data', 'anime_cards.json');
 let animeCards = [];
 try {
@@ -23,9 +23,21 @@ try {
   console.error('Error reading anime cards:', err);
 }
 
+// Load anime series database (Covers / Series)
+const SERIES_FILE = path.join(__dirname, 'data', 'anime_series.json');
+let animeSeries = [];
+try {
+  if (fs.existsSync(SERIES_FILE)) {
+    animeSeries = JSON.parse(fs.readFileSync(SERIES_FILE, 'utf-8'));
+  }
+} catch (err) {
+  console.error('Error reading anime series:', err);
+}
+
 // Game State
 const gameState = {
   phase: 'LOBBY', // 'LOBBY' | 'VIEWING' | 'PLAYING' | 'ACCUSING' | 'ROUND_RESULT' | 'GAME_OVER'
+  gameMode: 'CHARACTER', // 'CHARACTER' | 'ANIME' | 'MIXED'
   players: [
     { id: 'p1', name: 'Jugador 1', isImpostor: false, hasViewedCard: false, isEliminated: false, eliminatedAs: null },
     { id: 'p2', name: 'Jugador 2', isImpostor: false, hasViewedCard: false, isEliminated: false, eliminatedAs: null },
@@ -52,6 +64,7 @@ function getPublicState() {
 
   return {
     phase: gameState.phase,
+    gameMode: gameState.gameMode,
     round: gameState.round,
     startingPlayer: gameState.startingPlayer,
     lastAccusation: gameState.lastAccusation,
@@ -73,11 +86,12 @@ function getPublicState() {
     showOverlaySecret: gameState.showOverlaySecret,
     impostorCount: gameState.impostorCount,
     selectedCategory: gameState.selectedCategory,
-    totalCards: animeCards.length
+    totalCharacters: animeCards.length,
+    totalSeries: animeSeries.length
   };
 }
 
-// Helper to pick random card
+// Helpers to pick random card or series
 function pickRandomCard(category) {
   let pool = animeCards;
   if (category && category !== 'ALL') {
@@ -85,7 +99,13 @@ function pickRandomCard(category) {
   }
   if (!pool || pool.length === 0) pool = animeCards;
   const randomIndex = Math.floor(Math.random() * pool.length);
-  return pool[randomIndex];
+  return { ...pool[randomIndex], type: 'CHARACTER' };
+}
+
+function pickRandomSeries() {
+  if (!animeSeries || animeSeries.length === 0) return pickRandomCard();
+  const randomIndex = Math.floor(Math.random() * animeSeries.length);
+  return { ...animeSeries[randomIndex], type: 'ANIME' };
 }
 
 // Helper to pick random starting player from alive players
@@ -128,21 +148,24 @@ app.get('/admin', (req, res) => {
 
 // REST API for cards
 app.get('/api/cards', (req, res) => {
-  res.json(animeCards);
+  res.json({
+    characters: animeCards,
+    series: animeSeries
+  });
 });
 
 app.post('/api/cards', (req, res) => {
-  const { name, anime, category, image, hint } = req.body;
-  if (!name || !anime) {
-    return res.status(400).json({ error: 'Nombre y anime son requeridos' });
+  const { name, anime, category, image } = req.body;
+  if (!name) {
+    return res.status(400).json({ error: 'Nombre es requerido' });
   }
   const newCard = {
     id: 'custom_' + Date.now(),
     name,
-    anime,
+    anime: anime || 'Anime',
     category: category || 'Personalizado',
     image: image || 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&q=80',
-    hint: hint || 'Pista: Personaje de anime misterioso.'
+    type: anime ? 'CHARACTER' : 'ANIME'
   };
   animeCards.unshift(newCard);
   try {
@@ -176,8 +199,8 @@ io.on('connection', (socket) => {
         callback({
           isImpostor: true,
           playerName: player.name,
-          hint: gameState.secretCard.hint,
           category: gameState.secretCard.category,
+          cardType: gameState.secretCard.type, // 'CHARACTER' or 'ANIME'
           totalImpostors: gameState.impostorCount
         });
       }
@@ -198,7 +221,6 @@ io.on('connection', (socket) => {
       gameState.currentViewingIndex++;
       broadcastState();
     } else {
-      // Everyone viewed their card! Pick who starts speaking and enter PLAYING phase
       gameState.phase = 'PLAYING';
       gameState.startingPlayer = pickRandomAlivePlayer();
       broadcastState();
@@ -237,12 +259,10 @@ io.on('connection', (socket) => {
     target.isEliminated = true;
 
     if (target.isImpostor) {
-      // Caught an impostor!
       target.eliminatedAs = 'IMPOSTOR';
       const aliveImpostors = gameState.players.filter(p => !p.isEliminated && p.isImpostor).length;
 
       if (aliveImpostors === 0) {
-        // ALL IMPOSTORS ELIMINATED -> INNOCENTS WIN!
         gameState.phase = 'GAME_OVER';
         gameState.winner = 'INNOCENTS';
         gameState.lastAccusation = {
@@ -252,7 +272,6 @@ io.on('connection', (socket) => {
           winner: 'INNOCENTS'
         };
       } else {
-        // There is still another impostor alive! Continue game
         const nextStarter = pickRandomAlivePlayer(target.id);
         gameState.startingPlayer = nextStarter;
         gameState.round++;
@@ -266,13 +285,10 @@ io.on('connection', (socket) => {
         };
       }
     } else {
-      // Innocent was falsely accused and eliminated!
       target.eliminatedAs = 'INNOCENT';
       const aliveImpostors = gameState.players.filter(p => !p.isEliminated && p.isImpostor).length;
       const aliveInnocents = gameState.players.filter(p => !p.isEliminated && !p.isImpostor).length;
 
-      // Victory condition requested:
-      // "hasta que quede un numero igual de impostores que no, ahí ya ganaron los impostores"
       if (aliveImpostors >= aliveInnocents) {
         gameState.phase = 'GAME_OVER';
         gameState.winner = 'IMPOSTORS';
@@ -283,7 +299,6 @@ io.on('connection', (socket) => {
           winner: 'IMPOSTORS'
         };
       } else {
-        // Game continues! Choose next player to start the new round
         const nextStarter = pickRandomAlivePlayer(target.id);
         gameState.startingPlayer = nextStarter;
         gameState.round++;
@@ -326,11 +341,18 @@ io.on('connection', (socket) => {
   });
 
   socket.on('admin_start_game', (options) => {
-    const { category, impostorCount, customCardId } = options || {};
+    const { mode, category, impostorCount, customCardId } = options || {};
+
+    gameState.gameMode = mode || gameState.gameMode || 'CHARACTER';
 
     if (customCardId) {
       const found = animeCards.find(c => c.id === customCardId);
-      gameState.secretCard = found || pickRandomCard(category);
+      gameState.secretCard = found ? { ...found, type: 'CHARACTER' } : pickRandomCard(category);
+    } else if (gameState.gameMode === 'ANIME') {
+      gameState.secretCard = pickRandomSeries();
+    } else if (gameState.gameMode === 'MIXED') {
+      const isSeries = Math.random() < 0.5;
+      gameState.secretCard = isSeries ? pickRandomSeries() : pickRandomCard(category);
     } else {
       gameState.selectedCategory = category || 'ALL';
       gameState.secretCard = pickRandomCard(gameState.selectedCategory);

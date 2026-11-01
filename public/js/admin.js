@@ -137,11 +137,15 @@ function renderAdminState(state) {
   if (state.secretCard && state.phase !== 'LOBBY') {
     if (prevImg) prevImg.src = state.secretCard.image || 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400&q=80';
     if (prevName) prevName.textContent = state.secretCard.name;
-    if (prevAnime) prevAnime.textContent = state.secretCard.anime;
+    if (prevAnime) {
+      prevAnime.textContent = state.secretCard.type === 'ANIME'
+        ? '📺 Modo Serie: Carátula Oficial'
+        : (state.secretCard.anime || 'Anime');
+    }
     if (prevHint) prevHint.textContent = `Categoría temática: ${state.secretCard.category}`;
   } else {
     if (prevName) prevName.textContent = 'Ninguna ronda activa';
-    if (prevAnime) prevAnime.textContent = 'Presiona "Iniciar Partida" para sortear un personaje';
+    if (prevAnime) prevAnime.textContent = 'Presiona "Iniciar Partida" para sortear';
     if (prevHint) prevHint.textContent = 'Categoría: -';
   }
 
@@ -224,6 +228,27 @@ document.getElementById('btn-save-players').addEventListener('click', () => {
   showAdminToast('¡Lista de jugadores guardada y sincronizada!');
 });
 
+let currentGameMode = 'CHARACTER';
+
+window.setGameMode = function(mode) {
+  currentGameMode = mode;
+  const bChar = document.getElementById('btn-mode-char');
+  const bAnime = document.getElementById('btn-mode-anime');
+  const bMixed = document.getElementById('btn-mode-mixed');
+
+  [bChar, bAnime, bMixed].forEach(b => {
+    b.className = 'p-2 rounded-xl border border-slate-700 bg-slate-800 text-slate-400 font-bold font-cyber text-center text-[10px] hover:border-slate-600';
+  });
+
+  if (mode === 'CHARACTER' && bChar) {
+    bChar.className = 'p-2 rounded-xl border border-cyan-400 bg-cyan-950/50 text-cyan-300 font-bold font-cyber text-center text-[10px]';
+  } else if (mode === 'ANIME' && bAnime) {
+    bAnime.className = 'p-2 rounded-xl border border-pink-500 bg-pink-950/50 text-pink-300 font-bold font-cyber text-center text-[10px]';
+  } else if (mode === 'MIXED' && bMixed) {
+    bMixed.className = 'p-2 rounded-xl border border-purple-500 bg-purple-950/50 text-purple-300 font-bold font-cyber text-center text-[10px]';
+  }
+};
+
 // IMPOSTOR COUNT
 window.setImpostorCount = function(count) {
   impostorCount = count;
@@ -244,6 +269,7 @@ document.getElementById('btn-start-game').addEventListener('click', () => {
   saveAndBroadcastPlayers();
   const category = document.getElementById('select-category').value;
   socket.emit('admin_start_game', {
+    mode: currentGameMode,
     category,
     impostorCount
   });

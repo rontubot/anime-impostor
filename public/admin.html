@@ -160,6 +160,22 @@
           </h2>
 
           <div class="space-y-4 text-xs">
+            <!-- Mode selection -->
+            <div>
+              <label class="block font-semibold text-slate-300 mb-1.5">Modo de Juego:</label>
+              <div class="grid grid-cols-3 gap-1.5">
+                <button type="button" id="btn-mode-char" onclick="setGameMode('CHARACTER')" class="p-2 rounded-xl border border-cyan-400 bg-cyan-950/50 text-cyan-300 font-bold font-cyber text-center text-[10px]">
+                  🎭 PERSONAJES
+                </button>
+                <button type="button" id="btn-mode-anime" onclick="setGameMode('ANIME')" class="p-2 rounded-xl border border-slate-700 bg-slate-800 text-slate-400 font-bold font-cyber text-center text-[10px] hover:border-slate-600">
+                  📺 ANIMES
+                </button>
+                <button type="button" id="btn-mode-mixed" onclick="setGameMode('MIXED')" class="p-2 rounded-xl border border-slate-700 bg-slate-800 text-slate-400 font-bold font-cyber text-center text-[10px] hover:border-slate-600">
+                  🎲 MIXTO
+                </button>
+              </div>
+            </div>
+
             <!-- Impostors count -->
             <div>
               <label class="block font-semibold text-slate-300 mb-1.5">Cantidad de Impostores:</label>
